@@ -1,0 +1,41 @@
+﻿Loading C:\Users\Admin\OneDrive - MSFT\Desktop\STUDY BITS\25-26 SEM-2\3. SA\PROJECT\unibridge\data\processed_records.json
+Loaded 1,541 records
+
+==========================================================
+VALIDATION REPORT
+==========================================================
+Total records checked : 1,541
+Errors found          : 0
+Warnings found        : 0
+
+  [OK] Zero errors.
+  [OK] Zero warnings.
+
+--- FIELD SUMMARY ---
+  source=patent        :   284  /  1,541
+  source=paper         : 1,257  /  1,541
+  title non-empty      : 1,541  /  1,541  OK
+  abstract non-empty   : 1,541  /  1,541  OK
+  is_indian is bool    : 1,541  /  1,541  OK
+  is_indian = True     :   345
+  is_indian = False    : 1,196
+  domain non-blank     : 1,541  /  1,541  OK
+  contributors = []    :     8  (empty list allowed)
+
+--- DOMAIN DISTRIBUTION ---
+  Physics & Computing                      641  (41.6%)
+  Life Sciences                            353  (22.9%)
+  Other                                    278  (18.0%)
+  Computing & AI                            96  ( 6.2%)
+  Chemistry & Materials                     47  ( 3.0%)
+  Electronics & Electrical                  39  ( 2.5%)
+  Social Sciences                           27  ( 1.8%)
+  Engineering                               20  ( 1.3%)
+  Mechanical Engineering                    12  ( 0.8%)
+  Environmental Science                     10  ( 0.6%)
+  Mathematics                               10  ( 0.6%)
+  Economics & Business                       4  ( 0.3%)
+  Civil Engineering                          2  ( 0.1%)
+  Textiles & Manufacturing                   1  ( 0.1%)
+  Mechanical & Thermal Engineering           1  ( 0.1%)
+==========================================================
