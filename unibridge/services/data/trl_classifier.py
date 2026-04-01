@@ -353,10 +353,170 @@ def predict_trl_llm(abstract: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Hybrid master function
+# ---------------------------------------------------------------------------
+
+def predict_trl(
+    abstract: str,
+    date_published: str | None = None,
+    legal_status: str | None = None,
+) -> dict:
+    """
+    Hybrid TRL prediction combining rule-based and LLM approaches, with
+    optional post-hoc adjustments based on patent age and legal status.
+
+    Parameters
+    ----------
+    abstract       : research/patent abstract text
+    date_published : ISO-8601-ish date string whose first 4 chars are the year,
+                     e.g. "2021-03-15" or "2021".  None → skip adjustments.
+    legal_status   : "ACTIVE", "EXPIRED", etc.  None → skip adjustments.
+
+    Returns
+    -------
+    dict with keys: trl, confidence, method, reasoning, adjustments_applied
+    """
+    # --- Step 1: pick base prediction ---
+    rules_result = predict_trl_rules(abstract)
+
+    if rules_result["confidence"] > 0.7:
+        base      = rules_result
+        method    = "rules"
+        reasoning = (
+            "Matched keywords: " + ", ".join(rules_result["matched_keywords"])
+            if rules_result["matched_keywords"]
+            else "Rule-based match (no specific keywords)"
+        )
+    else:
+        base      = predict_trl_llm(abstract)
+        method    = "llm"
+        reasoning = base.get("reasoning", "")
+
+    trl = base["trl"]
+
+    # --- Step 2: optional adjustments ---
+    adjustments_applied = False
+
+    if date_published is not None and legal_status is not None:
+        try:
+            patent_age = 2025 - int(str(date_published)[:4])
+
+            if legal_status == "ACTIVE" and patent_age > 5:
+                new_trl = min(9, trl + 1)
+                if new_trl != trl:
+                    trl = new_trl
+                    adjustments_applied = True
+
+            if patent_age < 2:
+                new_trl = max(1, trl - 1)
+                if new_trl != trl:
+                    trl = new_trl
+                    adjustments_applied = True
+
+        except (ValueError, TypeError):
+            pass  # unparseable date — skip adjustments silently
+
+    return {
+        "trl":                 trl,
+        "confidence":          base["confidence"],
+        "method":              method,
+        "reasoning":           reasoning,
+        "adjustments_applied": adjustments_applied,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Batch evaluator
+# ---------------------------------------------------------------------------
+
+def batch_evaluate(samples: list[dict]) -> list[dict]:
+    """
+    Run all three predictors on each sample and print a comparison table.
+
+    Each sample dict must contain at minimum:
+        "abstract"       : str
+        "title"          : str   (display only, truncated to 50 chars)
+        "date_published" : str | None
+        "legal_status"   : str | None
+
+    Returns a list of comparison-row dicts.
+    """
+    rows: list[dict] = []
+
+    for rec in samples:
+        abstract      = rec.get("abstract", "")
+        title         = rec.get("title", "")
+        date_pub      = rec.get("date_published")
+        legal_status  = rec.get("legal_status")
+
+        rules_res  = predict_trl_rules(abstract)
+        llm_res    = predict_trl_llm(abstract)
+        hybrid_res = predict_trl(abstract, date_pub, legal_status)
+
+        rows.append({
+            "title":          title,
+            "rules_trl":      rules_res["trl"],
+            "llm_trl":        llm_res["trl"],
+            "hybrid_trl":     hybrid_res["trl"],
+            "hybrid_method":  hybrid_res["method"],
+            "hybrid_conf":    hybrid_res["confidence"],
+            "adjusted":       hybrid_res["adjustments_applied"],
+            "disagreement":   rules_res["trl"] != llm_res["trl"],
+        })
+
+    # --- Summary table ---
+    col = {"title": 50, "rules": 9, "llm": 8, "hybrid": 10, "method": 11}
+    header = (
+        f"{'Title':<{col['title']}} | "
+        f"{'Rules TRL':>{col['rules']}} | "
+        f"{'LLM TRL':>{col['llm']}} | "
+        f"{'Hybrid TRL':>{col['hybrid']}} | "
+        f"{'Method Used':<{col['method']}}"
+    )
+    sep = "-" * len(header)
+
+    print(sep)
+    print(header)
+    print(sep)
+
+    for r in rows:
+        title_trunc = r["title"][:col["title"]]
+        print(
+            f"{title_trunc:<{col['title']}} | "
+            f"{r['rules_trl']:>{col['rules']}} | "
+            f"{r['llm_trl']:>{col['llm']}} | "
+            f"{r['hybrid_trl']:>{col['hybrid']}} | "
+            f"{r['hybrid_method']:<{col['method']}}"
+        )
+
+    print(sep)
+
+    # --- Aggregate stats ---
+    total        = len(rows)
+    rules_count  = sum(1 for r in rows if r["hybrid_method"] == "rules")
+    llm_count    = total - rules_count
+    avg_conf     = round(sum(r["hybrid_conf"] for r in rows) / total, 2) if total else 0.0
+    disagreed    = sum(1 for r in rows if r["disagreement"])
+    adjusted     = sum(1 for r in rows if r["adjusted"])
+
+    print(f"\nAggregate stats ({total} records):")
+    print(f"  Hybrid used rules : {rules_count}")
+    print(f"  Hybrid used LLM   : {llm_count}")
+    print(f"  Avg confidence    : {avg_conf}")
+    print(f"  Rules vs LLM disagreements : {disagreed}")
+    print(f"  Records adjusted by age/status : {adjusted}")
+
+    return rows
+
+
+# ---------------------------------------------------------------------------
 # Self-test
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    import json as _json
+    from pathlib import Path as _Path
+
     test_cases = [
         "This paper proposes a theoretical framework for quantum entanglement.",
         "We validated our approach through controlled laboratory experiments on a bench-scale prototype.",
@@ -376,3 +536,21 @@ if __name__ == "__main__":
         print(abstract[:80])
         print(result)
         print()
+
+    # --- Hybrid batch on first 20 processed records ---
+    print("--- Hybrid batch evaluation ---")
+    _records_path = _Path(__file__).resolve().parents[2] / "data" / "processed_records.json"
+    with open(_records_path, encoding="utf-8") as _f:
+        _all_records = _json.load(_f)
+
+    _samples = [
+        {
+            "title":          r.get("title", ""),
+            "abstract":       r.get("abstract", ""),
+            "date_published": r.get("date"),          # "date" field from process_data.py
+            "legal_status":   r.get("legal_status"),  # None for papers (not present)
+        }
+        for r in _all_records[:20]
+    ]
+
+    batch_evaluate(_samples)
