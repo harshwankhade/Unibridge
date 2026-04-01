@@ -1,0 +1,20 @@
+﻿--- Rule-based predictions ---
+This paper proposes a theoretical framework for quantum entanglement.
+{'trl': 2, 'confidence': 0.67, 'matched_keywords': ['this paper proposes', 'theoretical framework'], 'method': 'rules'}
+
+We validated our approach through controlled laboratory experiments on a bench-s
+{'trl': 3, 'confidence': 0.5, 'matched_keywords': ['laboratory experiment'], 'method': 'rules'}
+
+The system has been commercially deployed in three industrial facilities and is 
+{'trl': 9, 'confidence': 1.0, 'matched_keywords': ['commercially deployed', 'in production'], 'method': 'rules'}
+
+--- LLM predictions ---
+This paper proposes a theoretical framework for quantum entanglement.
+{'trl': 1, 'confidence': 0.9, 'reasoning': 'The abstract mentions a theoretical framework, indicating basic principles observed.', 'method': 'llm'}
+
+We validated our approach through controlled laboratory experiments on a bench-s
+{'trl': 4, 'confidence': 0.9, 'reasoning': 'Technology validated in lab (lab-scale testing)', 'method': 'llm'}
+
+The system has been commercially deployed in three industrial facilities and is 
+{'trl': 9, 'confidence': 1.0, 'reasoning': 'The system has been commercially deployed and is currently in production, indicating a TRL of 9.', 'method': 'llm'}
+

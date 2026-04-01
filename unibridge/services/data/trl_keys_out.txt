@@ -1,0 +1,34 @@
+﻿=================================================================
+TRL RETURN-KEYS VALIDATION
+=================================================================
+Cases run: 13  |  Passed: 13  |  Failed: 0
+
+  [OK]   normal û TRL 2 keywords
+         trl=2  conf=0.67  matched=['this paper proposes', 'theoretical framework']  method='rules'
+  [OK]   normal û TRL 3 keywords
+         trl=3  conf=0.75  matched=['proof of concept', 'laboratory experiment', 'experiments confirm']  method='rules'
+  [OK]   normal û TRL 9 keywords
+         trl=9  conf=1.0  matched=['commercially deployed', 'in production']  method='rules'
+  [OK]   zero match default
+         trl=3  conf=0.0  matched=[]  method='rules'
+  [OK]   empty string
+         trl=3  conf=0.0  matched=[]  method='rules'
+  [OK]   whitespace only
+         trl=3  conf=0.0  matched=[]  method='rules'
+  [OK]   numbers only
+         trl=3  conf=0.0  matched=[]  method='rules'
+  [OK]   multi-tier overlap (TRL 3 + TRL 4 keywords)
+         trl=4  conf=0.67  matched=['controlled laboratory', 'experimental setup']  method='rules'
+  [OK]   very long abstract
+         trl=2  conf=0.67  matched=['this paper proposes', 'theoretical framework']  method='rules'
+  [OK]   all TRL 1 keywords present
+         trl=1  conf=1.0  matched=['theoretical', 'hypothesis', 'fundamental']à  method='rules'
+  [OK]   all TRL 9 keywords present
+         trl=9  conf=1.0  matched=['commercially deployed', 'in production', 'operational system']à  method='rules'
+  [OK]   single character
+         trl=3  conf=0.0  matched=[]  method='rules'
+  [OK]   unicode / non-ASCII
+         trl=1  conf=1.0  matched=['fundamental']  method='rules'
+
+=================================================================
+RESULT: ALL CHECKS PASSED
