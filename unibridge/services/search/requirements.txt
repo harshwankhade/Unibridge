@@ -1,2 +1,6 @@
 fastapi
 uvicorn
+httpx
+openai
+sentence-transformers
+python-dotenv

@@ -1,0 +1,6 @@
+﻿Title      : Solid-state electrolytes for lithium-ion battery longevity
+Explanation: This research on solid-state electrolytes improving lithium-ion battery longevity can potentially address the battery degradation issue in your EV fleet, leading to longer-lasting batteries and improved performance.
+
+Title      : Machine learning prediction of battery degradation patterns
+Explanation: This research can help optimize charging strategies and predict battery degradation patterns in EVs, potentially addressing the issue of battery degradation in your fleet.
+

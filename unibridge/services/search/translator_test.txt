@@ -1,0 +1,12 @@
+﻿Category : solve
+Original : We are struggling with battery degradation in our EV fleet
+Translated: Our research focuses on mitigating battery degradation in electric vehicle (EV) fleets through innovative materials, advanced battery management systems, and optimized charging algorithms to extend battery lifespan and improve overall fleet performance.
+
+Category : benchmark
+Original : We want to compare different water purification technologies
+Translated: A comparative analysis of water purification technologies based on performance metrics, technical specifications, and competing approaches.
+
+Category : landscape
+Original : Give us an overview of the quantum computing space
+Translated: Provide a comprehensive analysis of the quantum computing landscape, encompassing research, patents, and advancements in quantum algorithms, quantum hardware, quantum software, quantum information theory, quantum error correction, quantum cryptography, and quantum machine learning.
+

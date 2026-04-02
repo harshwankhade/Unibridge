@@ -1,0 +1,28 @@
+﻿Loading cross-encoder (cross-encoder/ms-marco-MiniLM-L-6-v2)...
+Cross-encoder ready.
+Query: electrochemical degradation lithium-ion battery cathode materials
+Returned 10 results
+  [4.247] Hydrostatic pressure effect on structural and transport prop ù Indian Institute of Technology Tirupati
+  [4.247] Hydrostatic pressure effect on structural and transport prop ù Indian Institute of Technology Dharwad
+  [2.911] Effect of salt concentration on the solubility, ion-dynamics ù Indian Institute of Technology Tirupati
+  [2.911] Effect of salt concentration on the solubility, ion-dynamics ù Indian Institute of Technology Dharwad
+  [-0.424] Method for recovering and preparing lithium cobaltate from w ù Tsinghua University
+  [-1.028] Lithium Metal Extraction from Seawater ù Fudan University
+  [-1.268] Structural insights into composition design of Li-rich layer ù University of California San Diego
+  [-2.634] A method for making compound cathode of solid oxide fuel bat ù Peking University
+  [-5.357] Investigation of Pre-lithiation in Graphite and Hard-Carbon  ù Tongji University
+  [-6.153] High Performance Printed AgO-Zn Rechargeable Battery for Fle ù University of California San Diego
+
+Query: deep learning medical image segmentation convolutional neural networks
+Returned 10 results
+  [1.018] AI visualization in Nanoscale Microscopy ù Indian Institute of Technology Tirupati
+  [1.018] AI visualization in Nanoscale Microscopy ù Indian Institute of Technology Dharwad
+  [-0.622] A Comprehensive Convolutional Neural Network Architecture De ù Indian Institute of Technology Tirupati
+  [-0.622] A Comprehensive Convolutional Neural Network Architecture De ù Indian Institute of Technology Dharwad
+  [-0.641] Review of Vision-Based Deep Learning Parking Slot Detection  ù Tongji University
+  [-1.035] Deep learning for the ovarian lesion localization and discri ù Fudan University
+  [-1.136] Single-Channel EEG Data Analysis Using a Multi-Branch CNN fo ù Fudan University
+  [-1.449] ADAPTIVE CONVOLUTIONS IN NEURAL NETWORKS ù ETH Zurich
+  [-1.577] MS-HNN: Multi-Scale Hierarchical Neural Network With Squeeze ù Fudan University
+  [-3.917] Learning-based sampling for image matting ù ETH Zurich
+
