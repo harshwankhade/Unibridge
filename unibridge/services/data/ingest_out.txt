@@ -1,0 +1,356 @@
+﻿Loading embedding model (all-MiniLM-L6-v2)ΓÇª
+ChromaDB initialised -> path: C:\Users\Admin\OneDrive - MSFT\Desktop\STUDY BITS\25-26 SEM-2\3. SA\PROJECT\unibridge\services\data\chroma_db
+Collection 'unibridge_records' ready (existing docs: 0)
+
+Loading records from C:\Users\Admin\OneDrive - MSFT\Desktop\STUDY BITS\25-26 SEM-2\3. SA\PROJECT\unibridge\data\processed_records.json
+  Ingested 50/1541ΓÇª
+  Ingested 100/1541ΓÇª
+  Ingested 150/1541ΓÇª
+  Ingested 200/1541ΓÇª
+  Ingested 250/1541ΓÇª
+  Ingested 300/1541ΓÇª
+[predict_trl_llm] API error: JSONDecodeError: Invalid \escape: line 4 column 95 (char 129)
+  Ingested 350/1541ΓÇª
+  Ingested 400/1541ΓÇª
+  Ingested 450/1541ΓÇª
+  Ingested 500/1541ΓÇª
+  Ingested 550/1541ΓÇª
+  Ingested 600/1541ΓÇª
+  Ingested 650/1541ΓÇª
+  Ingested 700/1541ΓÇª
+  Ingested 750/1541ΓÇª
+  Ingested 800/1541ΓÇª
+  Ingested 850/1541ΓÇª
+  Ingested 900/1541ΓÇª
+  Ingested 950/1541ΓÇª
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+  Ingested 1000/1541ΓÇª
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+  Ingested 1050/1541ΓÇª
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+  Ingested 1100/1541ΓÇª
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+  Ingested 1150/1541ΓÇª
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+  Ingested 1200/1541ΓÇª
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+  Ingested 1250/1541ΓÇª
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+[predict_trl_llm] API error: APIConnectionError: Connection error.
+  Ingested 1300/1541ΓÇª
+  Ingested 1350/1541ΓÇª
+  Ingested 1400/1541ΓÇª
+  Ingested 1450/1541ΓÇª
+  Ingested 1500/1541ΓÇª
+
+Ingestion complete.  Total records: 1541  |  Skipped: 0
+ChromaDB collection now contains 1541 documents.
+
+--- Running verification queries ---
+
+Query: "machine learning for drug discovery"
+------------------------------------------------------------
+  [1] Drug discovery is an eternal challenge for the biomedical sc
+       University : Tongji University
+       Source     : paper  |  Domain: Other  |  TRL: 3  |  Similarity: 0.562
+  [2] Reliable OOD Virtual Screening with Extrapolatory Pseudo-Lab
+       University : University of North Carolina at Chapel Hill
+       Source     : paper  |  Domain: Computing & AI  |  TRL: 6  |  Similarity: 0.55
+  [3] Emerging role of machine learning in light-matter interactio
+       University : University of Technology Sydney
+       Source     : paper  |  Domain: Life Sciences  |  TRL: 3  |  Similarity: 0.427
+
+Query: "solar energy efficiency improvement"
+------------------------------------------------------------
+  [1] Integrating algae building technology in the built environme
+       University : University of Technology Sydney
+       Source     : paper  |  Domain: Other  |  TRL: 1  |  Similarity: 0.508
+  [2] Techno-Economic Analysis of a Fuzzy Logic Control Based Hybr
+       University : Kyushu University
+       Source     : paper  |  Domain: Computing & AI  |  TRL: 4  |  Similarity: 0.465
+  [3] Performance investigation of transparent photovoltaicΓÇÉtherma
+       University : Indian Institute of Technology Guwahati
+       Source     : paper  |  Domain: Other  |  TRL: 4  |  Similarity: 0.464
+
+Query: "natural language processing text classification"
+------------------------------------------------------------
+  [1] Method and system for automatic analysis of hotspot subject 
+       University : Peking University
+       Source     : patent  |  Domain: Other  |  TRL: 6  |  Similarity: 0.453
+  [2] Method and system for automatically ranking product reviews 
+       University : Hebrew University of Jerusalem
+       Source     : patent  |  Domain: Physics & Computing  |  TRL: 4  |  Similarity: 0.383
+  [3] Method and system for automatically computing subject evolut
+       University : Peking University
+       Source     : patent  |  Domain: Other  |  TRL: 6  |  Similarity: 0.355
