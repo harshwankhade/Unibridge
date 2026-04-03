@@ -3,6 +3,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
 import RoleRoute from "./components/RoleRoute";
+import Dashboard from "./pages/industry/Dashboard";
+import Search from "./pages/industry/Search";
+import Bookmarks from "./pages/industry/Bookmarks";
 
 // ---------- Placeholder pages ----------
 const Placeholder = ({ label }) => (
@@ -28,7 +31,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="industry">
-                <Placeholder label="Industry Search — coming soon" />
+                <Search />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -38,7 +41,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="industry">
-                <Placeholder label="Industry Dashboard — coming soon" />
+                <Dashboard />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -48,7 +51,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="industry">
-                <Placeholder label="Bookmarks — coming soon" />
+                <Bookmarks />
               </RoleRoute>
             </ProtectedRoute>
           }

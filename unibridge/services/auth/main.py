@@ -24,6 +24,7 @@ import os
 from datetime import datetime, timedelta
 
 from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
@@ -40,6 +41,15 @@ app = FastAPI(
     title="UniBridge Auth Service",
     description="JWT-based authentication and role management.",
     version="1.0.0",
+)
+
+# Allow browser requests from any origin (tighten in production)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Create database tables on startup

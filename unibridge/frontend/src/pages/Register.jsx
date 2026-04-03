@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import client from "../api/client";
+import axios from "axios";
+
+const AUTH_URL = "http://localhost:8001";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -17,7 +19,7 @@ export default function Register() {
     setSuccess("");
     setLoading(true);
     try {
-      await client.post("/auth/register", { email, password, role });
+      await axios.post(`${AUTH_URL}/register`, { email, password, role });
       setSuccess("Account created. Please log in.");
       setTimeout(() => navigate("/login"), 1500);
     } catch (err) {

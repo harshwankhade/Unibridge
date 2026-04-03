@@ -41,6 +41,7 @@ load_dotenv(dotenv_path=_ENV_PATH)
 # ---------------------------------------------------------------------------
 import httpx
 from fastapi import FastAPI, Header, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from explainer import explain_results
@@ -51,6 +52,14 @@ app = FastAPI(
     title="UniBridge Search Service",
     description="Orchestrates query translation → vector retrieval → re-ranking → explanation.",
     version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 ANALYTICS_SERVICE_URL = os.environ.get("ANALYTICS_SERVICE_URL", "http://localhost:8005")

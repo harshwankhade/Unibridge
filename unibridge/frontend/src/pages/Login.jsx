@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import client from "../api/client";
+import axios from "axios";
 import { saveAuth } from "../utils/auth";
+
+const AUTH_URL = "http://localhost:8001";
 
 const ROLE_REDIRECTS = {
   industry: "/industry/search",
@@ -21,7 +23,7 @@ export default function Login() {
     setError("");
     setLoading(true);
     try {
-      const { data } = await client.post("/auth/login", { email, password });
+      const { data } = await axios.post(`${AUTH_URL}/login`, { email, password });
       saveAuth(data.access_token, {
         user_id: data.user_id,
         email: data.email,
