@@ -24,11 +24,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-# ---------------------------------------------------------------------------
-# Windows-safe UTF-8 stdout
-# ---------------------------------------------------------------------------
-if hasattr(sys.stdout, "buffer"):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+
 
 # ---------------------------------------------------------------------------
 # Ensure trl_classifier is importable regardless of CWD

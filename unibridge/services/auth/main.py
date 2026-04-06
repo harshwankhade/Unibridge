@@ -26,7 +26,7 @@ from datetime import datetime, timedelta
 from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from jose import JWTError, jwt
-from passlib.context import CryptContext
+import bcrypt as _bcrypt
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
@@ -46,7 +46,7 @@ app = FastAPI(
 # Allow browser requests from any origin (tighten in production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -59,8 +59,7 @@ Base.metadata.create_all(bind=engine)
 # Security configuration
 # ---------------------------------------------------------------------------
 
-_pwd_ctx    = CryptContext(schemes=["bcrypt"], deprecated="auto")
-SECRET_KEY  = os.environ.get("JWT_SECRET", "unibridge-secret-key")
+_SECRET_KEY = os.environ.get("JWT_SECRET", "unibridge-secret-key")
 ALGORITHM   = "HS256"
 EXPIRY_HRS  = 48
 
@@ -83,22 +82,22 @@ def get_db():
 # ---------------------------------------------------------------------------
 
 def hash_password(password: str) -> str:
-    return _pwd_ctx.hash(password)
+    return _bcrypt.hashpw(password.encode(), _bcrypt.gensalt()).decode()
 
 
 def verify_password(plain: str, hashed: str) -> bool:
-    return _pwd_ctx.verify(plain, hashed)
+    return _bcrypt.checkpw(plain.encode(), hashed.encode())
 
 
 def create_token(data: dict) -> str:
     payload = data.copy()
     payload["exp"] = datetime.utcnow() + timedelta(hours=EXPIRY_HRS)
-    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+    return jwt.encode(payload, _SECRET_KEY, algorithm=ALGORITHM)
 
 
 def decode_token(token: str) -> dict:
     try:
-        return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return jwt.decode(token, _SECRET_KEY, algorithms=[ALGORITHM])
     except JWTError as exc:
         raise HTTPException(status_code=401, detail="Invalid or expired token") from exc
 
