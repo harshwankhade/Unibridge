@@ -28,7 +28,7 @@ from sentence_transformers import CrossEncoder
 # Step 1 — Setup
 # ---------------------------------------------------------------------------
 
-DATA_SERVICE_URL = os.environ.get("DATA_SERVICE_URL", "http://localhost:8003")
+DATA_SERVICE_URL = os.environ.get("DATA_URL", "http://localhost:8003")
 
 print("Loading cross-encoder (cross-encoder/ms-marco-MiniLM-L-6-v2)...",
       flush=True)

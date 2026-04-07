@@ -31,10 +31,14 @@ _HERE = Path(__file__).resolve().parent
 if str(_HERE) not in sys.path:
     sys.path.insert(0, str(_HERE))
 
-# Load .env from project root
 from dotenv import load_dotenv
-_ENV_PATH = _HERE.parents[1] / ".env"
-load_dotenv(dotenv_path=_ENV_PATH)
+
+# Load .env from project root
+try:
+    _ENV_PATH = _HERE.parents[1] / ".env"
+    load_dotenv(dotenv_path=_ENV_PATH, override=False)
+except IndexError:
+    pass
 
 # ---------------------------------------------------------------------------
 # Step 1 — Imports and app setup
@@ -56,14 +60,14 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-ANALYTICS_SERVICE_URL = os.environ.get("ANALYTICS_SERVICE_URL", "http://localhost:8005")
-AUTH_SERVICE_URL      = os.environ.get("AUTH_SERVICE_URL",      "http://localhost:8001")
+ANALYTICS_URL = os.environ.get("ANALYTICS_URL", "http://localhost:8005")
+AUTH_URL      = os.environ.get("AUTH_URL",      "http://localhost:8001")
 
 _VALID_CATEGORIES = {"solve", "benchmark", "landscape"}
 
@@ -93,7 +97,7 @@ def verify_token(authorization: str | None) -> dict:
 
     try:
         response = httpx.get(
-            f"{AUTH_SERVICE_URL}/verify",
+            f"{AUTH_URL}/verify",
             headers={"Authorization": authorization},
             timeout=10.0,
         )
@@ -145,7 +149,7 @@ def log_to_analytics(
         }
 
         httpx.post(
-            f"{ANALYTICS_SERVICE_URL}/event",
+            f"{ANALYTICS_URL}/event",
             json=payload,
             timeout=5.0,
         )

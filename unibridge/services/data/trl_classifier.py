@@ -32,9 +32,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 from openai import OpenAI
 
-# Load .env from project root — two levels up from services/data/
-_ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
-load_dotenv(dotenv_path=_ENV_PATH)
+# Inside Docker, env vars are injected by docker-compose env_file — load_dotenv is a no-op.
+try:
+    _ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
+    load_dotenv(dotenv_path=_ENV_PATH, override=False)
+except IndexError:
+    pass
 
 # ---------------------------------------------------------------------------
 # OpenAI client — reads OPENAI_API_KEY from the environment / .env

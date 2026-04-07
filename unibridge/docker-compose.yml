@@ -27,7 +27,7 @@ services:
     networks:
       - unibridge-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${AUTH_PORT}/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:${AUTH_PORT}/health" ]
       interval: 15s
       timeout: 5s
       retries: 5
@@ -45,19 +45,20 @@ services:
     env_file:
       - .env
     environment:
+      OPENAI_API_KEY: "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"
       DATA_PORT: ${DATA_PORT}
     ports:
       - "${DATA_PORT}:${DATA_PORT}"
     volumes:
-      - chroma_store:/app/chroma_store
+      - ./services/data/chroma_db:/app/chroma_db
     networks:
       - unibridge-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${DATA_PORT}/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:${DATA_PORT}/health" ]
       interval: 15s
       timeout: 5s
       retries: 5
-      start_period: 10s
+      start_period: 60s
     restart: unless-stopped
 
   # ---------------------------------------------------------------------------
@@ -71,8 +72,9 @@ services:
     env_file:
       - .env
     environment:
-      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
       DATA_URL: ${DATA_URL}
+      AUTH_URL: ${AUTH_URL}
       ANALYTICS_URL: ${ANALYTICS_URL}
       SEARCH_PORT: ${SEARCH_PORT}
     ports:
@@ -85,7 +87,7 @@ services:
       analytics:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${SEARCH_PORT}/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:${SEARCH_PORT}/health" ]
       interval: 15s
       timeout: 5s
       retries: 5
@@ -115,7 +117,7 @@ services:
       data:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${SUBMISSION_PORT}/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:${SUBMISSION_PORT}/health" ]
       interval: 15s
       timeout: 5s
       retries: 5
@@ -141,7 +143,7 @@ services:
     networks:
       - unibridge-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${ANALYTICS_PORT}/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:${ANALYTICS_PORT}/health" ]
       interval: 15s
       timeout: 5s
       retries: 5
@@ -178,7 +180,7 @@ services:
       data:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${ADMIN_PORT}/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:${ADMIN_PORT}/health" ]
       interval: 15s
       timeout: 5s
       retries: 5
@@ -221,7 +223,7 @@ services:
       admin:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${GATEWAY_PORT}/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:${GATEWAY_PORT}/health" ]
       interval: 15s
       timeout: 5s
       retries: 5
