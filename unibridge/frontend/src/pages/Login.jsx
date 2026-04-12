@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { saveAuth } from "../utils/auth";
 
-const AUTH_URL = "http://localhost:8001";
+const AUTH_URL = "http://localhost:8000/auth";
 
 const ROLE_REDIRECTS = {
   industry: "/industry/search",

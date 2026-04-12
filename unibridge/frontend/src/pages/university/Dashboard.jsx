@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { getUser, getToken, logout } from "../../utils/auth";
 
-const SUB_SERVICE = "http://localhost:8004";
+const SUB_SERVICE = "http://localhost:8000/submission";
 
 export default function UniversityDashboard() {
   const navigate = useNavigate();

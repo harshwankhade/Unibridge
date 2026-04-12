@@ -7,7 +7,7 @@ import {
 import AdminNav from "../../components/AdminNav";
 import { getToken } from "../../utils/auth";
 
-const ADMIN = "http://localhost:8006";
+const ADMIN = "http://localhost:8000/admin";
 const hdrs  = () => ({ Authorization: `Bearer ${getToken()}` });
 
 const PIE_COLORS = { solve: "#60a5fa", benchmark: "#a78bfa", landscape: "#2dd4bf" };

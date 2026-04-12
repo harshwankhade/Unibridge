@@ -4,7 +4,7 @@ import axios from "axios";
 import TechCard from "../../components/TechCard";
 
 const BOOKMARKS_KEY  = "unibridge_bookmarks";
-const SEARCH_SERVICE = "http://localhost:8002";
+const SEARCH_SERVICE = "http://localhost:8000/search";
 
 const CATEGORIES = [
   {

@@ -3,7 +3,7 @@ import axios from "axios";
 import AdminNav from "../../components/AdminNav";
 import { getToken } from "../../utils/auth";
 
-const ADMIN = "http://localhost:8006";
+const ADMIN = "http://localhost:8000/admin";
 
 function timeAgo(dateStr) {
   const diff = Date.now() - new Date(dateStr).getTime();

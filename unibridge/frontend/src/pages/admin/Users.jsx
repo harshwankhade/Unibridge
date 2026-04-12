@@ -3,7 +3,7 @@ import axios from "axios";
 import AdminNav from "../../components/AdminNav";
 import { getToken, getUser } from "../../utils/auth";
 
-const ADMIN = "http://localhost:8006";
+const ADMIN = "http://localhost:8000/admin";
 
 const ROLE_COLORS = {
   industry:   "bg-blue-500/20 text-blue-300 border-blue-500/40",

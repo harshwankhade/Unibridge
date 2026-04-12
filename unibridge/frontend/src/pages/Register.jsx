@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const AUTH_URL = "http://localhost:8001";
+const AUTH_URL = "http://localhost:8000/auth";
 
 export default function Register() {
   const navigate = useNavigate();
