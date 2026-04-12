@@ -9,6 +9,10 @@ import Bookmarks from "./pages/industry/Bookmarks";
 import UniversityDashboard from "./pages/university/Dashboard";
 import SubmitIP from "./pages/university/SubmitIP";
 import Submissions from "./pages/university/Submissions";
+import AdminDashboard from "./pages/admin/Dashboard";
+import AdminUsers from "./pages/admin/Users";
+import AdminSubmissions from "./pages/admin/Submissions";
+import AdminAnalytics from "./pages/admin/Analytics";
 
 // ---------- Placeholder pages ----------
 const Placeholder = ({ label }) => (
@@ -98,7 +102,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="admin">
-                <Placeholder label="Admin Dashboard — coming soon" />
+                <AdminDashboard />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -108,7 +112,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="admin">
-                <Placeholder label="User Management — coming soon" />
+                <AdminUsers />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -118,7 +122,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="admin">
-                <Placeholder label="Submission Queue — coming soon" />
+                <AdminSubmissions />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -128,7 +132,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="admin">
-                <Placeholder label="Analytics — coming soon" />
+                <AdminAnalytics />
               </RoleRoute>
             </ProtectedRoute>
           }
