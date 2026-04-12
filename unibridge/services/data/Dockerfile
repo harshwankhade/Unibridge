@@ -10,7 +10,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application
-COPY . .
+COPY main.py .
+COPY ingest.py .
+COPY test_trl_keys.py .
+COPY trl_classifier.py .
 
 EXPOSE 8003
 

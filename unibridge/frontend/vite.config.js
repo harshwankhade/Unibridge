@@ -4,4 +4,16 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    host: '0.0.0.0',   // bind to all interfaces — avoids EACCES on Windows IPv6 (::1)
+    port: 3000,
+    proxy: {
+      // Forward /api/* → gateway so the browser never hits CORS
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 })

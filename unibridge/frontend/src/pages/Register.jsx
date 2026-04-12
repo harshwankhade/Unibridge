@@ -6,12 +6,12 @@ const AUTH_URL = "http://localhost:8000/auth";
 
 export default function Register() {
   const navigate = useNavigate();
-  const [email,    setEmail]    = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role,     setRole]     = useState("industry");
-  const [error,    setError]    = useState("");
-  const [success,  setSuccess]  = useState("");
-  const [loading,  setLoading]  = useState(false);
+  const [role, setRole] = useState("industry");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

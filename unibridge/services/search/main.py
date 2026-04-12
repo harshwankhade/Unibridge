@@ -33,8 +33,11 @@ if str(_HERE) not in sys.path:
 
 # Load .env from project root
 from dotenv import load_dotenv
-_ENV_PATH = _HERE.parents[1] / ".env"
-load_dotenv(dotenv_path=_ENV_PATH)
+try:
+    _ENV_PATH = _HERE.parents[1] / ".env"
+    load_dotenv(dotenv_path=_ENV_PATH)
+except IndexError:
+    load_dotenv()
 
 # ---------------------------------------------------------------------------
 # Step 1 — Imports and app setup
@@ -112,11 +115,11 @@ def verify_token(authorization: str | None) -> dict:
 # ---------------------------------------------------------------------------
 
 def log_to_analytics(
-    user_id: int | None,
     query: str,
     translated_query: str,
     category: str,
     results: list[dict],
+    user_id: int | None = None,
 ) -> None:
     """
     POST a search event to the Analytics Service.
@@ -188,9 +191,11 @@ def search(
     try:
         results = retrieve(translated_query, n_results=50, top_n=request.n_results)
     except Exception as exc:
+        import traceback
+        traceback.print_exc()   # prints full traceback to docker logs
         raise HTTPException(
             status_code=503,
-            detail="Search service temporarily unavailable",
+            detail=f"Search service temporarily unavailable: {exc}",
         ) from exc
 
     # 5. Explain results (use ORIGINAL query for business-facing explanations)
@@ -203,7 +208,7 @@ def search(
 
     # 6. Log to analytics (fire-and-forget — never blocks response)
     try:
-        log_to_analytics(user_id, query, translated_query, category, results)
+        log_to_analytics(query, translated_query, category, results, user_id)
     except Exception:   # noqa: BLE001
         pass
 

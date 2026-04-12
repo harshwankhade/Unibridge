@@ -14,7 +14,8 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    # Allow any localhost port so Vite port fallbacks (3001, 5174, etc.) never break CORS
+    allow_origin_regex=r"http://localhost:\d+",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -35,9 +36,13 @@ async def health():
 # Universal proxy
 # ---------------------------------------------------------------------------
 
-@app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "PATCH"])
+@app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"])
 async def proxy(path: str, request: Request):
     full_path = "/" + path
+
+    # Handle CORS preflight immediately — never auth-check OPTIONS
+    if request.method == "OPTIONS":
+        return Response(status_code=200)
 
     # 1. Route matching
     route = match_route(full_path)

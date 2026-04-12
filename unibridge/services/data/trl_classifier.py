@@ -33,8 +33,11 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 # Load .env from project root — two levels up from services/data/
-_ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
-load_dotenv(dotenv_path=_ENV_PATH)
+try:
+    _ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
+    load_dotenv(dotenv_path=_ENV_PATH)
+except IndexError:
+    load_dotenv()
 
 # ---------------------------------------------------------------------------
 # OpenAI client — reads OPENAI_API_KEY from the environment / .env

@@ -11,7 +11,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application
 COPY main.py .
+COPY database.py .
+COPY models.py .
+COPY seed.py .
+COPY start.sh .
+RUN chmod +x start.sh   # ensure executable on Linux regardless of Windows git attrs
 
-EXPOSE 8000
+EXPOSE 8001
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Auto-seed demo users then start the server
+CMD ["sh", "start.sh"]

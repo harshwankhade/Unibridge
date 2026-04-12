@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import client from "../../api/client";
+import { getToken } from "../../utils/auth";
 import TechCard from "../../components/TechCard";
 
 const BOOKMARKS_KEY  = "unibridge_bookmarks";
-const SEARCH_SERVICE = "http://localhost:8000/search";
 
 const CATEGORIES = [
   {
@@ -70,10 +70,14 @@ export default function Search() {
     setResults([]);
 
     try {
-      const { data } = await axios.post(`${SEARCH_SERVICE}/search`, {
+      const { data } = await client.post('/search', {
         query,
         category,
         n_results: 10,
+      }, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
       });
       setResults(data.results || []);
       setTranslatedQuery(data.translated_query || "");
