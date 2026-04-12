@@ -6,6 +6,9 @@ import RoleRoute from "./components/RoleRoute";
 import Dashboard from "./pages/industry/Dashboard";
 import Search from "./pages/industry/Search";
 import Bookmarks from "./pages/industry/Bookmarks";
+import UniversityDashboard from "./pages/university/Dashboard";
+import SubmitIP from "./pages/university/SubmitIP";
+import Submissions from "./pages/university/Submissions";
 
 // ---------- Placeholder pages ----------
 const Placeholder = ({ label }) => (
@@ -63,7 +66,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="university">
-                <Placeholder label="University Dashboard — coming soon" />
+                <UniversityDashboard />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -73,7 +76,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="university">
-                <Placeholder label="Submit IP — coming soon" />
+                <SubmitIP />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -83,7 +86,7 @@ export default function App() {
           element={
             <ProtectedRoute>
               <RoleRoute role="university">
-                <Placeholder label="Submissions — coming soon" />
+                <Submissions />
               </RoleRoute>
             </ProtectedRoute>
           }
