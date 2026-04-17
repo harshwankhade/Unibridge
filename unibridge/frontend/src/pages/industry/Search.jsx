@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import client from "../../api/client";
-import { getToken } from "../../utils/auth";
+import { getToken, logout } from "../../utils/auth";
 import TechCard from "../../components/TechCard";
 
 const BOOKMARKS_KEY  = "unibridge_bookmarks";
@@ -116,16 +116,47 @@ export default function Search() {
       <main className="max-w-6xl mx-auto px-6 py-10">
 
         {/* ── Page header ── */}
-        <div className="mb-8">
-          <h1
-            className="text-4xl text-white mb-2"
-            style={{ fontFamily: "'DM Serif Display', serif" }}
+        <div className="mb-8 flex items-start justify-between">
+          <div>
+            <h1
+              className="text-4xl text-white mb-2"
+              style={{ fontFamily: "'DM Serif Display', serif" }}
+            >
+              Technology Search
+            </h1>
+            <p className="text-slate-400">
+              Discover university IP and research across 1,000+ institutions
+            </p>
+          </div>
+          <button
+            id="sign-out-button"
+            onClick={logout}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(239,68,68,0.12)";
+              e.currentTarget.style.borderColor = "rgba(239,68,68,0.7)";
+              e.currentTarget.style.color = "#fca5a5";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)";
+              e.currentTarget.style.color = "#ffffff";
+            }}
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(255,255,255,0.6)",
+              color: "#ffffff",
+              fontSize: "0.8rem",
+              fontWeight: 500,
+              padding: "6px 16px",
+              borderRadius: "10px",
+              cursor: "pointer",
+              transition: "background-color 0.15s, border-color 0.15s, color 0.15s",
+              marginTop: "6px",
+              flexShrink: 0,
+            }}
           >
-            Technology Search
-          </h1>
-          <p className="text-slate-400">
-            Discover university IP and research across 1,000+ institutions
-          </p>
+            Sign Out
+          </button>
         </div>
 
         {/* ── Category selector ── */}

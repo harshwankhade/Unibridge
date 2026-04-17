@@ -16,6 +16,7 @@ function sourceBadgeColor(source) {
 // ─── Component ───────────────────────────────────────────────────────────────
 export default function TechCard({ result, onBookmark, isBookmarked }) {
   const [expanded, setExpanded] = useState(false);
+  const [showFullExplanation, setShowFullExplanation] = useState(false);
 
   const {
     title = "",
@@ -83,9 +84,22 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
 
       {/* ── Explanation ── */}
       {explanation && (
-        <p className="text-slate-400 italic text-xs leading-relaxed line-clamp-2">
-          {explanation}
-        </p>
+        <div>
+          <p className="text-slate-400 italic text-xs leading-relaxed">
+            {showFullExplanation || explanation.length <= 120
+              ? explanation
+              : explanation.slice(0, 120) + "..."}
+          </p>
+          {explanation.length > 120 && (
+            <span
+              onClick={() => setShowFullExplanation((v) => !v)}
+              className="text-cyan-400 text-sm cursor-pointer"
+              style={{ textDecoration: "none" }}
+            >
+              {showFullExplanation ? "Show less" : "Show more"}
+            </span>
+          )}
+        </div>
       )}
 
       {/* ── Contributors ── */}

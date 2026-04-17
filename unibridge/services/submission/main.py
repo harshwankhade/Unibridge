@@ -8,16 +8,18 @@ import httpx
 import os
 from database import SessionLocal, engine
 from models import Base, Submission
-
+from jose import jwt, JWTError
 # ---------------------------------------------------------------------------
 # App setup
 # ---------------------------------------------------------------------------
+JWT_SECRET = os.environ.get("JWT_SECRET", "unibridge-secret-key")
+JWT_ALGORITHM = "HS256"
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173", "http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,7 +27,6 @@ app.add_middleware(
 
 Base.metadata.create_all(bind=engine)
 
-AUTH_SERVICE_URL = os.environ.get("AUTH_SERVICE_URL", "http://localhost:8001")
 DATA_SERVICE_URL = os.environ.get("DATA_SERVICE_URL", "http://localhost:8003")
 
 # ---------------------------------------------------------------------------
@@ -44,21 +45,15 @@ def get_db():
 # ---------------------------------------------------------------------------
 
 def verify_token(authorization: Optional[str]) -> dict:
-    """Verify Bearer token against the Auth Service and return user info."""
+    """Decode JWT locally — no auth service call needed."""
     if authorization is None or not authorization.startswith("Bearer "):
         raise HTTPException(status_code=401, detail="No token provided")
 
+    token = authorization[len("Bearer "):]
     try:
-        response = httpx.get(
-            AUTH_SERVICE_URL + "/verify",
-            headers={"Authorization": authorization},
-        )
-        if response.status_code != 200:
-            raise HTTPException(status_code=401, detail="Invalid or expired token")
-        return response.json()
-    except HTTPException:
-        raise
-    except Exception:
+        payload = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
+        return payload
+    except JWTError:
         raise HTTPException(status_code=401, detail="Invalid or expired token")
 
 # ---------------------------------------------------------------------------

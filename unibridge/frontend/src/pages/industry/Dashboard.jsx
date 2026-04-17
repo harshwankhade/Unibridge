@@ -39,22 +39,13 @@ export default function Dashboard() {
           <p className="text-slate-400 text-base">{user?.email}</p>
         </div>
 
-        {/* ── Stat cards ── */}
-        <div className="grid grid-cols-3 gap-5 mb-10">
-          {[
-            { label: "Searches Today",  value: 0,              sub: "queries run"      },
-            { label: "Bookmarks",       value: bookmarks.length, sub: "saved results"  },
-            { label: "Active Session",  value: user?.role ?? "—", sub: "current role"  },
-          ].map(({ label, value, sub }) => (
-            <div
-              key={label}
-              className="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6"
-            >
-              <p className="text-slate-400 text-xs uppercase tracking-widest mb-2">{label}</p>
-              <p className="text-3xl font-semibold text-white mb-1">{value}</p>
-              <p className="text-slate-500 text-xs">{sub}</p>
-            </div>
-          ))}
+        {/* ── Stat card ── */}
+        <div className="mb-10">
+          <div className="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6 inline-block min-w-[180px]">
+            <p className="text-slate-400 text-xs uppercase tracking-widest mb-2">Bookmarks</p>
+            <p className="text-3xl font-semibold text-white mb-1">{bookmarks.length}</p>
+            <p className="text-slate-500 text-xs">saved results</p>
+          </div>
         </div>
 
         {/* ── Quick actions ── */}
