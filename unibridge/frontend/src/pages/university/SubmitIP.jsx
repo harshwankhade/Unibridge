@@ -20,32 +20,34 @@ const DOMAINS = [
 ];
 
 export default function SubmitIP() {
-  const navigate  = useNavigate();
-  const location  = useLocation();
-  const prefill   = location.state?.submission;
-  const isEdit    = Boolean(prefill);
-  const user      = getUser();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const prefill = location.state?.submission;
+  const isEdit = Boolean(prefill);
+  const user = getUser();
 
   // ── Form state ───────────────────────────────────────────────────────────
-  const [title,        setTitle]        = useState(prefill?.title        ?? "");
-  const [abstract,     setAbstract]     = useState(prefill?.abstract     ?? "");
-  const [university,   setUniversity]   = useState(prefill?.university   ?? user?.university ?? "");
+  const [title, setTitle] = useState(prefill?.title ?? "");
+  const [abstract, setAbstract] = useState(prefill?.abstract ?? "");
+  const [university, setUniversity] = useState(prefill?.university ?? user?.university ?? "");
   const [contributors, setContributors] = useState(prefill?.contributors ?? "");
-  const [domain,       setDomain]       = useState(prefill?.domain       ?? "");
-  const [ip_type,      setIpType]       = useState(prefill?.ip_type      ?? "paper");
-  const [legal_status, setLegalStatus]  = useState(prefill?.legal_status ?? "PENDING");
+  const [domain, setDomain] = useState(prefill?.domain ?? "");
+  const [ip_type, setIpType] = useState(prefill?.ip_type ?? "paper");
+  const [legal_status, setLegalStatus] = useState(prefill?.legal_status ?? "PENDING");
+  const [doi, setDoi] = useState(prefill?.doi || "");
+  const [patentNumber, setPatentNumber] = useState(prefill?.patent_number || "");
 
   const [loading, setLoading] = useState(false);
-  const [error,   setError]   = useState("");
+  const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
   // ── Validation ───────────────────────────────────────────────────────────
   function validate() {
-    if (!title.trim())                             return "Title must not be empty.";
-    if (abstract.trim().length < 100)              return "Abstract must be at least 100 characters.";
-    if (!university.trim())                        return "University / Institution must not be empty.";
-    if (!contributors.trim())                      return "Contributors must not be empty.";
-    if (!domain)                                   return "Please select a domain.";
+    if (!title.trim()) return "Title must not be empty.";
+    if (abstract.trim().length < 100) return "Abstract must be at least 100 characters.";
+    if (!university.trim()) return "University / Institution must not be empty.";
+    if (!contributors.trim()) return "Contributors must not be empty.";
+    if (!domain) return "Please select a domain.";
     return null;
   }
 
@@ -69,14 +71,16 @@ export default function SubmitIP() {
           domain,
           ip_type,
           legal_status: ip_type === "patent" ? legal_status : "PENDING",
+          doi,
+          patent_number: patentNumber,
         },
         { headers: { Authorization: `Bearer ${getToken()}` } }
       );
 
       setSuccess(true);
-      // Reset form
       setTitle(""); setAbstract(""); setContributors("");
       setDomain(""); setIpType("paper"); setLegalStatus("PENDING");
+      setDoi(""); setPatentNumber("");
     } catch (err) {
       setError(err.response?.data?.detail ?? "Submission failed. Please try again.");
     } finally {
@@ -85,21 +89,23 @@ export default function SubmitIP() {
   }
 
   // ── Input class helper ───────────────────────────────────────────────────
-  const inputCls = "w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/40 transition";
+  const inputCls =
+    "w-full bg-white border border-[#e8e4d9] rounded-xl px-4 py-3 text-sm text-[#1a1a2e] " +
+    "placeholder-[#8888aa] focus:outline-none focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] transition";
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen bg-[#fdfcf7] text-[#1a1a2e]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
 
       {/* ── Nav ── */}
-      <nav className="border-b border-slate-800 px-8 py-4 flex items-center justify-between">
-        <span className="text-cyan-400 font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
+      <nav className="bg-white border-b border-[#e8e4d9] shadow-sm px-8 py-4 flex items-center justify-between">
+        <span className="text-[#0d9488] font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
           UniBridge
         </span>
-        <div className="flex items-center gap-6 text-sm text-slate-400">
-          <Link to="/university/dashboard"   className="hover:text-white transition">Dashboard</Link>
-          <Link to="/university/submit"      className="text-white font-medium">Submit IP</Link>
-          <Link to="/university/submissions" className="hover:text-white transition">My Submissions</Link>
-          <button onClick={logout} className="hover:text-red-400 transition">Sign out</button>
+        <div className="flex items-center gap-6 text-sm text-[#4a4a6a]">
+          <Link to="/university/dashboard" className="hover:text-[#0d9488] transition">Dashboard</Link>
+          <Link to="/university/submit" className="text-[#0d9488] font-semibold">Submit IP</Link>
+          <Link to="/university/submissions" className="hover:text-[#0d9488] transition">My Submissions</Link>
+          <button onClick={logout} className="text-[#dc2626] hover:bg-red-50 px-2 py-1 rounded-lg transition">Sign out</button>
         </div>
       </nav>
 
@@ -107,10 +113,10 @@ export default function SubmitIP() {
 
         {/* ── Page header ── */}
         <div className="mb-10">
-          <h1 className="text-4xl text-white mb-2" style={{ fontFamily: "'DM Serif Display', serif" }}>
+          <h1 className="text-4xl text-[#1a1a2e] mb-2" style={{ fontFamily: "'DM Serif Display', serif" }}>
             {isEdit ? "Edit Submission" : "Submit Intellectual Property"}
           </h1>
-          <p className="text-slate-400 text-sm">
+          <p className="text-[#4a4a6a] text-sm">
             {isEdit
               ? "Update the fields below and submit a revised version."
               : "Share your university's research and patents with industry partners."
@@ -120,16 +126,16 @@ export default function SubmitIP() {
 
         {/* ── Success banner ── */}
         {success && (
-          <div className="mb-8 bg-emerald-900/40 border border-emerald-500/50 rounded-2xl p-6">
-            <p className="text-emerald-300 font-semibold mb-1">
+          <div className="mb-8 bg-green-50 border border-green-200 rounded-2xl p-6">
+            <p className="text-green-800 font-semibold mb-1">
               ✅ Submission received!
             </p>
-            <p className="text-emerald-400/80 text-sm mb-4">
+            <p className="text-green-700 text-sm mb-4">
               It will be reviewed by our team shortly.
             </p>
             <button
               onClick={() => navigate("/university/submissions")}
-              className="text-cyan-400 text-sm hover:text-cyan-300 underline underline-offset-4 transition"
+              className="text-[#0d9488] text-sm hover:text-[#0f766e] underline underline-offset-4 transition"
             >
               View My Submissions →
             </button>
@@ -141,7 +147,7 @@ export default function SubmitIP() {
 
           {/* Title */}
           <div>
-            <label className="block text-sm text-slate-300 mb-2 font-medium">Title *</label>
+            <label className="block text-sm text-[#4a4a6a] mb-2 font-medium">Title *</label>
             <input
               type="text"
               value={title}
@@ -149,16 +155,16 @@ export default function SubmitIP() {
               placeholder="e.g. A novel polymer membrane for CO₂ capture"
               className={inputCls}
             />
-            <p className="text-slate-500 text-xs mt-1.5 text-right">{title.length} / 200</p>
+            <p className="text-[#8888aa] text-xs mt-1.5 text-right">{title.length} / 200</p>
           </div>
 
           {/* IP Type */}
           <div>
-            <label className="block text-sm text-slate-300 mb-3 font-medium">IP Type *</label>
+            <label className="block text-sm text-[#4a4a6a] mb-3 font-medium">IP Type *</label>
             <div className="flex gap-3">
               {[
-                { val: "paper",  label: "📄 Research Paper" },
-                { val: "patent", label: "🔬 Patent"         },
+                { val: "paper", label: "📄 Research Paper" },
+                { val: "patent", label: "🔬 Patent" },
               ].map(({ val, label }) => (
                 <button
                   key={val}
@@ -166,8 +172,8 @@ export default function SubmitIP() {
                   onClick={() => setIpType(val)}
                   className={`flex-1 px-4 py-3 rounded-xl border text-sm font-medium transition
                     ${ip_type === val
-                      ? "bg-cyan-500/20 border-cyan-500/60 text-cyan-300"
-                      : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-500"
+                      ? "bg-[#ccfbf1] border-[#0d9488]/50 text-[#0d9488]"
+                      : "bg-white border-[#e8e4d9] text-[#4a4a6a] hover:border-[#0d9488]/40"
                     }`}
                 >
                   {label}
@@ -178,7 +184,7 @@ export default function SubmitIP() {
 
           {/* Domain */}
           <div>
-            <label className="block text-sm text-slate-300 mb-2 font-medium">Domain *</label>
+            <label className="block text-sm text-[#4a4a6a] mb-2 font-medium">Domain *</label>
             <select
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
@@ -191,7 +197,7 @@ export default function SubmitIP() {
 
           {/* University */}
           <div>
-            <label className="block text-sm text-slate-300 mb-2 font-medium">University / Institution *</label>
+            <label className="block text-sm text-[#4a4a6a] mb-2 font-medium">University / Institution *</label>
             <input
               type="text"
               value={university}
@@ -203,7 +209,7 @@ export default function SubmitIP() {
 
           {/* Contributors */}
           <div>
-            <label className="block text-sm text-slate-300 mb-2 font-medium">Contributors *</label>
+            <label className="block text-sm text-[#4a4a6a] mb-2 font-medium">Contributors *</label>
             <input
               type="text"
               value={contributors}
@@ -211,13 +217,13 @@ export default function SubmitIP() {
               placeholder="e.g. Dr. Sharma, Dr. Patel, Prof. Singh"
               className={inputCls}
             />
-            <p className="text-slate-500 text-xs mt-1.5">Enter contributor names separated by commas</p>
+            <p className="text-[#8888aa] text-xs mt-1.5">Enter contributor names separated by commas</p>
           </div>
 
           {/* Legal Status — only for Patents */}
           {ip_type === "patent" && (
             <div>
-              <label className="block text-sm text-slate-300 mb-2 font-medium">Legal Status *</label>
+              <label className="block text-sm text-[#4a4a6a] mb-2 font-medium">Legal Status *</label>
               <select
                 value={legal_status}
                 onChange={(e) => setLegalStatus(e.target.value)}
@@ -232,7 +238,7 @@ export default function SubmitIP() {
 
           {/* Abstract */}
           <div>
-            <label className="block text-sm text-slate-300 mb-2 font-medium">Abstract *</label>
+            <label className="block text-sm text-[#4a4a6a] mb-2 font-medium">Abstract *</label>
             <textarea
               value={abstract}
               onChange={(e) => setAbstract(e.target.value.slice(0, 2000))}
@@ -241,12 +247,42 @@ export default function SubmitIP() {
               style={{ minHeight: "150px" }}
               className={inputCls + " resize-y leading-relaxed"}
             />
-            <p className="text-slate-500 text-xs mt-1.5 text-right">{abstract.length} / 2000</p>
+            <p className="text-[#8888aa] text-xs mt-1.5 text-right">{abstract.length} / 2000</p>
           </div>
+
+          {/* DOI — only for Research Papers */}
+          {ip_type === "paper" && (
+            <div>
+              <label className="block text-sm text-[#4a4a6a] mb-2 font-medium">DOI</label>
+              <input
+                type="text"
+                value={doi}
+                onChange={e => setDoi(e.target.value)}
+                placeholder="e.g. 10.1038/s41586-021-03819-2"
+                className={inputCls}
+              />
+              <p className="text-[#8888aa] text-xs mt-1.5">Digital Object Identifier — found on the paper's journal page</p>
+            </div>
+          )}
+
+          {/* Patent Number — only for Patents */}
+          {ip_type === "patent" && (
+            <div>
+              <label className="block text-sm text-[#4a4a6a] mb-2 font-medium">Patent Number</label>
+              <input
+                type="text"
+                value={patentNumber}
+                onChange={e => setPatentNumber(e.target.value)}
+                placeholder="e.g. US10123456B2"
+                className={inputCls}
+              />
+              <p className="text-[#8888aa] text-xs mt-1.5">Found on the patent document or Lens.org</p>
+            </div>
+          )}
 
           {/* Error */}
           {error && (
-            <div className="bg-red-900/30 border border-red-700/60 rounded-xl px-5 py-4 text-red-300 text-sm">
+            <div className="bg-red-50 border border-red-200 rounded-xl px-5 py-4 text-red-700 text-sm">
               {error}
             </div>
           )}
@@ -255,7 +291,7 @@ export default function SubmitIP() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-cyan-500 hover:bg-cyan-400 disabled:bg-slate-600 disabled:cursor-not-allowed text-slate-900 font-semibold py-3.5 rounded-xl transition text-sm"
+            className="w-full bg-[#0d9488] hover:bg-[#0f766e] disabled:bg-[#8888aa] disabled:cursor-not-allowed text-white font-semibold py-3.5 rounded-xl transition text-sm"
           >
             {loading
               ? "Submitting…"

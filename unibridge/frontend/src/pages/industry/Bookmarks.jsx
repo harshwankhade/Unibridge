@@ -31,18 +31,18 @@ export default function Bookmarks() {
 
   return (
     <div
-      className="min-h-screen bg-slate-900 text-white"
+      className="min-h-screen bg-[#fdfcf7] text-[#1a1a2e]"
       style={{ fontFamily: "'DM Sans', sans-serif" }}
     >
       {/* ── Nav ── */}
-      <nav className="border-b border-slate-800 px-8 py-4 flex items-center justify-between">
-        <span className="text-cyan-400 font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
+      <nav className="bg-white border-b border-[#e8e4d9] shadow-sm px-8 py-4 flex items-center justify-between">
+        <span className="text-[#0d9488] font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
           UniBridge
         </span>
-        <div className="flex gap-6 text-sm text-slate-400">
-          <Link to="/industry/dashboard" className="hover:text-white transition">Dashboard</Link>
-          <Link to="/industry/search"    className="hover:text-white transition">Search</Link>
-          <Link to="/industry/bookmarks" className="text-white font-medium">Bookmarks</Link>
+        <div className="flex gap-6 text-sm text-[#4a4a6a]">
+          <Link to="/industry/dashboard" className="hover:text-[#0d9488] transition">Dashboard</Link>
+          <Link to="/industry/search"    className="hover:text-[#0d9488] transition">Search</Link>
+          <Link to="/industry/bookmarks" className="text-[#0d9488] font-semibold">Bookmarks</Link>
         </div>
       </nav>
 
@@ -52,12 +52,12 @@ export default function Bookmarks() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1
-              className="text-4xl text-white mb-2"
+              className="text-4xl text-[#1a1a2e] mb-2"
               style={{ fontFamily: "'DM Serif Display', serif" }}
             >
               Saved Bookmarks
             </h1>
-            <p className="text-slate-400">
+            <p className="text-[#4a4a6a]">
               {bookmarks.length} saved result{bookmarks.length !== 1 ? "s" : ""}
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function Bookmarks() {
           {bookmarks.length > 0 && (
             <button
               onClick={clearAll}
-              className="text-sm text-red-400 hover:text-red-300 border border-red-500/40 hover:border-red-400 px-4 py-2 rounded-xl transition"
+              className="text-sm text-red-600 hover:text-red-700 border border-red-200 hover:border-red-400 hover:bg-red-50 px-4 py-2 rounded-xl transition"
             >
               Clear all bookmarks
             </button>
@@ -76,13 +76,13 @@ export default function Bookmarks() {
         {bookmarks.length === 0 && (
           <div className="flex flex-col items-center justify-center py-32 gap-4 text-center">
             <span className="text-5xl">🔖</span>
-            <p className="text-slate-400 text-lg">No bookmarks yet.</p>
-            <p className="text-slate-500 text-sm">
+            <p className="text-[#4a4a6a] text-lg">No bookmarks yet.</p>
+            <p className="text-[#8888aa] text-sm">
               Start searching to save results.
             </p>
             <Link
               to="/industry/search"
-              className="mt-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-2.5 rounded-xl transition"
+              className="mt-2 bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold px-5 py-2.5 rounded-xl transition"
             >
               Go to Search
             </Link>

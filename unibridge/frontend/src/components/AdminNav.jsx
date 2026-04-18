@@ -5,23 +5,23 @@ export default function AdminNav({ pendingCount = 0 }) {
   const { pathname } = useLocation();
 
   const links = [
-    { to: "/admin/dashboard",   label: "Dashboard"    },
-    { to: "/admin/users",       label: "Users"        },
-    { to: "/admin/submissions", label: "Submissions"  },
-    { to: "/admin/analytics",   label: "Analytics"    },
+    { to: "/admin/dashboard",   label: "Dashboard"   },
+    { to: "/admin/users",       label: "Users"       },
+    { to: "/admin/submissions", label: "Submissions" },
+    { to: "/admin/analytics",   label: "Analytics"   },
   ];
 
   return (
     <nav
-      className="border-b border-slate-800 px-8 py-4 flex items-center justify-between"
+      className="bg-white border-b border-[#e8e4d9] shadow-sm px-8 py-4 flex items-center justify-between"
       style={{ fontFamily: "'DM Sans', sans-serif" }}
     >
       {/* Brand */}
       <span
-        className="text-cyan-400 font-bold text-xl tracking-tight"
+        className="text-[#0d9488] font-bold text-xl tracking-tight"
         style={{ fontFamily: "'DM Serif Display', serif" }}
       >
-        UniBridge <span className="text-slate-500 text-sm font-normal ml-1">admin</span>
+        UniBridge <span className="text-[#8888aa] text-sm font-normal ml-1">admin</span>
       </span>
 
       {/* Links */}
@@ -34,12 +34,12 @@ export default function AdminNav({ pendingCount = 0 }) {
               key={to}
               to={to}
               className={`flex items-center gap-1.5 transition ${
-                active ? "text-white font-medium" : "text-slate-400 hover:text-white"
+                active ? "text-[#0d9488] font-semibold" : "text-[#4a4a6a] hover:text-[#0d9488]"
               }`}
             >
               {label}
               {isPending && (
-                <span className="bg-amber-500 text-slate-900 text-xs font-bold px-1.5 py-0.5 rounded-full leading-none">
+                <span className="bg-amber-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full leading-none">
                   {pendingCount}
                 </span>
               )}
@@ -48,7 +48,7 @@ export default function AdminNav({ pendingCount = 0 }) {
         })}
         <button
           onClick={logout}
-          className="text-slate-400 hover:text-red-400 transition text-sm ml-2"
+          className="text-[#dc2626] hover:bg-red-50 transition text-sm ml-2 px-3 py-1 rounded-lg"
         >
           Sign out
         </button>

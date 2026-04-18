@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-primary:     #fdfcf7;
+  --bg-secondary:   #f7f5ed;
+  --bg-card:        #ffffff;
+  --border:         #e8e4d9;
+  --text-primary:   #1a1a2e;
+  --text-secondary: #4a4a6a;
+  --text-muted:     #8888aa;
+  --accent:         #0d9488;
+  --accent-hover:   #0f766e;
+  --accent-light:   #ccfbf1;
+  --danger:         #dc2626;
+  --warning:        #d97706;
+  --success:        #16a34a;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+}

@@ -1,0 +1,402 @@
+[
+  {
+    "query": "global trends in pharmaceutical clinical trials outsourcing",
+    "category": "landscape",
+    "source_record_id": "paper_345",
+    "source_record_title": "When Experiments Travel: Clinical Trials and the Global Search for Human Subjects Adriana Petryna, Princeton University Press, 2009",
+    "source_domain": "Other",
+    "source_university": "Princeton University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "survey of awareness and attitudes towards social oocyte freezing in Western countries",
+    "category": "landscape",
+    "source_record_id": "paper_1238",
+    "source_record_title": "Understanding social oocyte freezing in Italy: a scoping survey on university female students’ awareness and attitudes",
+    "source_domain": "Social Sciences",
+    "source_university": "University of Padova",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Research overview on extracorporeal therapies for intensive care treatment of coronavirus.",
+    "category": "landscape",
+    "source_record_id": "paper_1250",
+    "source_record_title": "Coronavirus Epidemic and Extracorporeal Therapies in Intensive Care: si vis pacem para bellum",
+    "source_domain": "Life Sciences",
+    "source_university": "University of Padova",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "overview of optimization of low-carbon multi-energy systems with geothermal energy storage",
+    "category": "landscape",
+    "source_record_id": "paper_1047",
+    "source_record_title": "Optimization of low-carbon multi-energy systems with seasonal geothermal energy storage: The Anergy Grid of ETH Zurich",
+    "source_domain": "Environmental Science",
+    "source_university": "ETH Zurich",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Overview of research and patents related to polished finish concrete hanging boards with travertine material.",
+    "category": "landscape",
+    "source_record_id": "patent_272",
+    "source_record_title": "Concrete polished finish hanging board of beige travertine ballast and manufacture method thereof",
+    "source_domain": "Other",
+    "source_university": "Tsinghua University",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Comparison of lead removal technologies using PbrD proteins vs. cation exchange chromatography.",
+    "category": "benchmark",
+    "source_record_id": "patent_46",
+    "source_record_title": "Process and device for removing lead from a liquid",
+    "source_domain": "Chemistry & Materials",
+    "source_university": "University of the Witwatersrand",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Compare fuzzy logic control algorithms for hybrid renewable energy systems with maximum power point tracking systems for rapid power control efficiency.",
+    "category": "benchmark",
+    "source_record_id": "paper_912",
+    "source_record_title": "Techno-Economic Analysis of a Fuzzy Logic Control Based Hybrid Renewable Energy System to Power a University Campus in Japan",
+    "source_domain": "Computing & AI",
+    "source_university": "Kyushu University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Enhancing tone mapping for HDR video sequences.",
+    "category": "solve",
+    "source_record_id": "patent_108",
+    "source_record_title": "Temporally coherent local tone mapping of HDR video",
+    "source_domain": "Electronics & Electrical",
+    "source_university": "ETH Zurich",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Overview of current research trends and advancements in cosmic ray mass composition and shower maximum measurements using radio telescopes.",
+    "category": "landscape",
+    "source_record_id": "paper_1189",
+    "source_record_title": "Depth of shower maximum and mass composition of cosmic rays from 50 PeV to 2 EeV measured with the LOFAR radio telescope",
+    "source_domain": "Physics & Computing",
+    "source_university": "Vrije Universiteit Amsterdam",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Lithium extraction methods from seawater for industrial applications.",
+    "category": "solve",
+    "source_record_id": "paper_747",
+    "source_record_title": "Lithium Metal Extraction from Seawater",
+    "source_domain": "Engineering",
+    "source_university": "Fudan University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Method for manufacturing graphene fiber doped with hetero-elements for textile applications.",
+    "category": "solve",
+    "source_record_id": "patent_168",
+    "source_record_title": "Graphene fiber and method for manufacturing same",
+    "source_domain": "Textiles & Manufacturing",
+    "source_university": "Hanyang University",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Survey research and patents related to sport imagery among basketball players in academic institutions.",
+    "category": "landscape",
+    "source_record_id": "paper_266",
+    "source_record_title": "Sport Imagery among Basketball Players from Indian Institutes of Science Education and Research",
+    "source_domain": "Social Sciences",
+    "source_university": "Indian Institute of Science Education and Research Mohali",
+    "source_type": "paper",
+    "is_indian": true
+  },
+  {
+    "query": "masonry building reinforcement technique efficacy seismic retrofitting",
+    "category": "solve",
+    "source_record_id": "paper_47",
+    "source_record_title": "EXPERIMENTAL INVESTIGATIONS ON MASONRY BUILDINGS STRENGTHENED USING FERRO-CEMENT OVERLAY UNDER DYNAMIC LOADING",
+    "source_domain": "Other",
+    "source_university": "Indian Institute of Technology Roorkee",
+    "source_type": "paper",
+    "is_indian": true
+  },
+  {
+    "query": "Compare effectiveness of neutrophil to albumin ratio as a biomarker for non-alcoholic fatty liver disease and liver fibrosis with other non-invasive biomarkers in Life Sciences.",
+    "category": "benchmark",
+    "source_record_id": "paper_807",
+    "source_record_title": "Neutrophil to albumin ratio: a biomarker in non-alcoholic fatty liver disease and with liver fibrosis",
+    "source_domain": "Life Sciences",
+    "source_university": "Tongji University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "CSF leak closure technique comparison in skull base surgery.",
+    "category": "benchmark",
+    "source_record_id": "paper_889",
+    "source_record_title": "Three types of dural suturing for closure of CSF leak after endoscopic transsphenoidal surgery.",
+    "source_domain": "Life Sciences",
+    "source_university": "Nagoya University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Compare stability of circumstellar matter in magnetospheres with dipolar vs. quadrupolar magnetic fields.",
+    "category": "benchmark",
+    "source_record_id": "paper_560",
+    "source_record_title": "Distribution of magnetically confined circumstellar matter in oblique rotators",
+    "source_domain": "Physics & Computing",
+    "source_university": "University of St Andrews",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "overview of latest research on high capacity tensiometers for direct measurement of soil matric suction",
+    "category": "landscape",
+    "source_record_id": "paper_480",
+    "source_record_title": "Performance of the University of Newcastle high capacity tensiometers",
+    "source_domain": "Environmental Science",
+    "source_university": "Newcastle University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "National standards for diabetes self-management education and support research trends.",
+    "category": "landscape",
+    "source_record_id": "paper_378",
+    "source_record_title": "National Standards for Diabetes Self-Management Education and Support",
+    "source_domain": "Life Sciences",
+    "source_university": "University of California San Diego",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "fractured reservoir production prediction method using fracture network model",
+    "category": "solve",
+    "source_record_id": "patent_174",
+    "source_record_title": "Method for oil prediction in fractured reservoirs and recorded medium therefor",
+    "source_domain": "Civil Engineering",
+    "source_university": "Hanyang University",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Nucleosynthesis in type Ia supernovae for determining companion star impact on carbon ignition.",
+    "category": "solve",
+    "source_record_id": "paper_892",
+    "source_record_title": "Nucleosynthesis in type Ia supernovae",
+    "source_domain": "Physics & Computing",
+    "source_university": "Kyushu University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Spatial light steel reinforced concrete frame building research and patents overview",
+    "category": "landscape",
+    "source_record_id": "patent_216",
+    "source_record_title": "Spatial light steel reinforced concrete frame building and construction method thereof",
+    "source_domain": "Civil Engineering",
+    "source_university": "Tsinghua University",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Compare Lefschetz Theorem and vanishing cycles in Real Morse theory.",
+    "category": "benchmark",
+    "source_record_id": "paper_313",
+    "source_record_title": "Lefschetz Theorem Using Real Morse Theory",
+    "source_domain": "Mathematics",
+    "source_university": "Indian Institute of Science Education and Research Mohali",
+    "source_type": "paper",
+    "is_indian": true
+  },
+  {
+    "query": "Compare technologies for evaluating clinical characteristics and outcomes in patients with acute myocardial infarction.",
+    "category": "benchmark",
+    "source_record_id": "paper_939",
+    "source_record_title": "Multicenter Cohort Study of Acute Myocardial Infarction in Korea　- Interim Analysis of the Korea Acute Myocardial Infarction Registry-National Institutes of Health Registry.",
+    "source_domain": "Life Sciences",
+    "source_university": "Korea University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Research overview of high hydraulic pressure cutoff methods in mechanical & thermal engineering domain.",
+    "category": "landscape",
+    "source_record_id": "patent_256",
+    "source_record_title": "Electronic high hydraulic pressure cutoff to improve system efficiency",
+    "source_domain": "Mechanical & Thermal Engineering",
+    "source_university": "Purdue University",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Evaluate methods for evaluating target molecules bound to probe molecules with markers. Compare effectiveness, accuracy, and potential applications to determine optimal approach for industry use.",
+    "category": "benchmark",
+    "source_record_id": "patent_145",
+    "source_record_title": "Method for evaluating target molecules",
+    "source_domain": "Mechanical Engineering",
+    "source_university": "Technical University of Munich",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "carbon dioxide absorption technology comparison for synthesis gas production",
+    "category": "benchmark",
+    "source_record_id": "patent_41",
+    "source_record_title": "A carbon absorbing system used in the production of synthesis gas",
+    "source_domain": "Chemistry & Materials",
+    "source_university": "University of the Witwatersrand",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Compare excess noise factor formulas for multistep staircase avalanche photodiodes.",
+    "category": "benchmark",
+    "source_record_id": "paper_198",
+    "source_record_title": "Mathematical proof of errors in Capasso's excess noise factor formula for an n-step staircase multiplier",
+    "source_domain": "Engineering",
+    "source_university": "Indian Institute of Technology Dharwad",
+    "source_type": "paper",
+    "is_indian": true
+  },
+  {
+    "query": "Comparison of reliable visible light communication technologies for preventing flickering effects.",
+    "category": "benchmark",
+    "source_record_id": "patent_129",
+    "source_record_title": "Reliable visibile light communication with dark light synchronization",
+    "source_domain": "Electronics & Electrical",
+    "source_university": "ETH Zurich",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Method for recovering and preparing lithium cobaltate from waste lithium ion batteries.",
+    "category": "landscape",
+    "source_record_id": "patent_281",
+    "source_record_title": "Method for recovering and preparing lithium cobaltate from waste lithium ionic cell",
+    "source_domain": "Other",
+    "source_university": "Tsinghua University",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Comparison of light-cured ink-jet resist technologies for printed circuit board manufacturing.",
+    "category": "benchmark",
+    "source_record_id": "patent_143",
+    "source_record_title": "Photo-curing ink-jet resist for printing circuit board and preparation method thereof",
+    "source_domain": "Other",
+    "source_university": "Peking University",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "road damage detection technology overview survey",
+    "category": "landscape",
+    "source_record_id": "paper_146",
+    "source_record_title": "Transfer Learning-based Road Damage Detection for Multiple Countries",
+    "source_domain": "Computing & AI",
+    "source_university": "Indian Institute of Technology Tirupati",
+    "source_type": "paper",
+    "is_indian": true
+  },
+  {
+    "query": "Research on quasiparticle self-consistent GW and dynamical mean field theory for electronic structure in Fe and Ni transition metals.",
+    "category": "solve",
+    "source_record_id": "paper_161",
+    "source_record_title": "Self-energies in itinerant magnets: A focus on Fe and Ni",
+    "source_domain": "Physics & Computing",
+    "source_university": "Indian Institute of Technology Tirupati",
+    "source_type": "paper",
+    "is_indian": true
+  },
+  {
+    "query": "Detection of semantic changes in low-resource languages using contextualized word embeddings and distance metrics.",
+    "category": "solve",
+    "source_record_id": "paper_1226",
+    "source_record_title": "University of Padova @ DIACR-Ita",
+    "source_domain": "Engineering",
+    "source_university": "University of Padova",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "gender equality in academic careers impact mid-career scientists UniBridge technology solutions",
+    "category": "solve",
+    "source_record_id": "paper_1050",
+    "source_record_title": "Equal Opportunities in Academic Careers? How Mid-Career Scientists at ETH Zurich Evaluate the Impact of Their Gender and Age",
+    "source_domain": "Economics & Business",
+    "source_university": "ETH Zurich",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Gravitational collapse of matter in the presence of scalar field dark energy in physics and computing.",
+    "category": "solve",
+    "source_record_id": "paper_115",
+    "source_record_title": "Gravitational collapse of Matter in the presence of Scalar field Dark energy",
+    "source_domain": "Physics & Computing",
+    "source_university": "Indian Institute of Technology Tirupati",
+    "source_type": "paper",
+    "is_indian": true
+  },
+  {
+    "query": "fabricating high-density optical semiconductor tubes for ultralow threshold micro/nanoscale lasers.",
+    "category": "solve",
+    "source_record_id": "patent_225",
+    "source_record_title": "Method for fabricating optical semiconductor tubes and devices thereof",
+    "source_domain": "Mechanical Engineering",
+    "source_university": "McGill University",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Compare methods for generating synthetic skin based on capturing expressive poses from human subjects and modeling as elastic materials.",
+    "category": "benchmark",
+    "source_record_id": "patent_124",
+    "source_record_title": "Physical face cloning",
+    "source_domain": "Physics & Computing",
+    "source_university": "ETH Zurich",
+    "source_type": "patent",
+    "is_indian": false
+  },
+  {
+    "query": "Compare sustainable education initiatives in South Korea with innovative dropout prevention strategies in universities.",
+    "category": "benchmark",
+    "source_record_id": "paper_960",
+    "source_record_title": "Sustainable Education: Analyzing the Determinants of University Student Dropout by Nonlinear Panel Data Models",
+    "source_domain": "Economics & Business",
+    "source_university": "Korea University",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "latest trends in non-parametric two-sample testing in statistics",
+    "category": "landscape",
+    "source_record_id": "paper_396",
+    "source_record_title": "The AUGUST Two-Sample Test: Powerful, Interpretable, and Fast",
+    "source_domain": "Mathematics",
+    "source_university": "University of North Carolina at Chapel Hill",
+    "source_type": "paper",
+    "is_indian": false
+  },
+  {
+    "query": "Compare methods for organizing neural networks in the field of physics and computing.",
+    "category": "benchmark",
+    "source_record_id": "patent_79",
+    "source_record_title": "Organizing neural networks",
+    "source_domain": "Physics & Computing",
+    "source_university": "Ecole Polytechnique",
+    "source_type": "patent",
+    "is_indian": false
+  }
+]

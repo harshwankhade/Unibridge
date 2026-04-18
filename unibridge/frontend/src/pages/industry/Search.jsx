@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import client from "../../api/client";
 import { getToken, logout } from "../../utils/auth";
@@ -75,9 +75,7 @@ export default function Search() {
         category,
         n_results: 10,
       }, {
-        headers: {
-          Authorization: `Bearer ${getToken()}`
-        }
+        headers: { Authorization: `Bearer ${getToken()}` }
       });
       setResults(data.results || []);
       setTranslatedQuery(data.translated_query || "");
@@ -98,18 +96,18 @@ export default function Search() {
 
   return (
     <div
-      className="min-h-screen bg-slate-900 text-white"
+      className="min-h-screen bg-[#fdfcf7] text-[#1a1a2e]"
       style={{ fontFamily: "'DM Sans', sans-serif" }}
     >
       {/* ── Nav ── */}
-      <nav className="border-b border-slate-800 px-8 py-4 flex items-center justify-between">
-        <span className="text-cyan-400 font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
+      <nav className="bg-white border-b border-[#e8e4d9] shadow-sm px-8 py-4 flex items-center justify-between">
+        <span className="text-[#0d9488] font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
           UniBridge
         </span>
-        <div className="flex gap-6 text-sm text-slate-400">
-          <Link to="/industry/dashboard" className="hover:text-white transition">Dashboard</Link>
-          <Link to="/industry/search"    className="text-white font-medium">Search</Link>
-          <Link to="/industry/bookmarks" className="hover:text-white transition">Bookmarks</Link>
+        <div className="flex gap-6 text-sm text-[#4a4a6a]">
+          <Link to="/industry/dashboard" className="hover:text-[#0d9488] transition">Dashboard</Link>
+          <Link to="/industry/search"    className="text-[#0d9488] font-semibold">Search</Link>
+          <Link to="/industry/bookmarks" className="hover:text-[#0d9488] transition">Bookmarks</Link>
         </div>
       </nav>
 
@@ -119,12 +117,12 @@ export default function Search() {
         <div className="mb-8 flex items-start justify-between">
           <div>
             <h1
-              className="text-4xl text-white mb-2"
+              className="text-4xl text-[#1a1a2e] mb-2"
               style={{ fontFamily: "'DM Serif Display', serif" }}
             >
               Technology Search
             </h1>
-            <p className="text-slate-400">
+            <p className="text-[#4a4a6a]">
               Discover university IP and research across 1,000+ institutions
             </p>
           </div>
@@ -132,19 +130,19 @@ export default function Search() {
             id="sign-out-button"
             onClick={logout}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(239,68,68,0.12)";
-              e.currentTarget.style.borderColor = "rgba(239,68,68,0.7)";
-              e.currentTarget.style.color = "#fca5a5";
+              e.currentTarget.style.backgroundColor = "rgba(220,38,38,0.08)";
+              e.currentTarget.style.borderColor = "rgba(220,38,38,0.6)";
+              e.currentTarget.style.color = "#dc2626";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)";
-              e.currentTarget.style.color = "#ffffff";
+              e.currentTarget.style.borderColor = "#e8e4d9";
+              e.currentTarget.style.color = "#4a4a6a";
             }}
             style={{
               background: "transparent",
-              border: "1px solid rgba(255,255,255,0.6)",
-              color: "#ffffff",
+              border: "1px solid #e8e4d9",
+              color: "#4a4a6a",
               fontSize: "0.8rem",
               fontWeight: 500,
               padding: "6px 16px",
@@ -167,14 +165,14 @@ export default function Search() {
               onClick={() => setCategory(cat.id)}
               className={`text-left rounded-2xl px-5 py-4 border transition-all duration-150
                 ${category === cat.id
-                  ? "bg-cyan-500/20 border-cyan-500/60 shadow-lg shadow-cyan-900/30"
-                  : "bg-slate-800/50 border-slate-700/50 hover:border-slate-500"
+                  ? "bg-[#ccfbf1] border-[#0d9488]/50 shadow-sm"
+                  : "bg-white border-[#e8e4d9] hover:border-[#0d9488]/40"
                 }`}
             >
-              <p className={`font-semibold text-sm mb-1 ${category === cat.id ? "text-cyan-300" : "text-white"}`}>
+              <p className={`font-semibold text-sm mb-1 ${category === cat.id ? "text-[#0d9488]" : "text-[#1a1a2e]"}`}>
                 {cat.label}
               </p>
-              <p className="text-slate-400 text-xs leading-relaxed">{cat.desc}</p>
+              <p className="text-[#4a4a6a] text-xs leading-relaxed">{cat.desc}</p>
             </button>
           ))}
         </div>
@@ -188,13 +186,13 @@ export default function Search() {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={activeCat?.placeholder}
-            className="flex-1 bg-slate-800 border border-slate-700 rounded-xl px-5 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/40 transition"
+            className="flex-1 bg-white border border-[#e8e4d9] rounded-xl px-5 py-3 text-sm text-[#1a1a2e] placeholder-[#8888aa] focus:outline-none focus:border-[#0d9488] focus:ring-1 focus:ring-[#0d9488] transition"
           />
           <button
             id="search-button"
             onClick={handleSearch}
             disabled={loading}
-            className="bg-cyan-500 hover:bg-cyan-400 disabled:bg-slate-600 text-slate-900 font-semibold px-6 py-3 rounded-xl transition"
+            className="bg-[#0d9488] hover:bg-[#0f766e] disabled:bg-[#8888aa] text-white font-semibold px-6 py-3 rounded-xl transition"
           >
             {loading ? "Searching…" : "Search"}
           </button>
@@ -202,17 +200,17 @@ export default function Search() {
 
         {/* ── Translated query box ── */}
         {translatedQuery && showTranslated && (
-          <div className="mb-6 bg-slate-800/50 border border-slate-700/60 rounded-xl px-5 py-4">
+          <div className="mb-6 bg-white border border-[#e8e4d9] rounded-xl px-5 py-4">
             <div className="flex items-center justify-between mb-1">
-              <span className="text-slate-500 text-xs uppercase tracking-widest">Translated query</span>
+              <span className="text-[#8888aa] text-xs uppercase tracking-widest">Translated query</span>
               <button
                 onClick={() => setShowTranslated(false)}
-                className="text-slate-600 hover:text-slate-400 text-xs"
+                className="text-[#8888aa] hover:text-[#4a4a6a] text-xs"
               >
                 ✕ hide
               </button>
             </div>
-            <p className="text-slate-300 text-sm leading-relaxed">{translatedQuery}</p>
+            <p className="text-[#4a4a6a] text-sm leading-relaxed">{translatedQuery}</p>
           </div>
         )}
 
@@ -223,13 +221,13 @@ export default function Search() {
               onClick={() => setIndianOnly((v) => !v)}
               className={`flex items-center gap-2 text-sm px-4 py-2 rounded-xl border transition
                 ${indianOnly
-                  ? "bg-orange-500/20 border-orange-400/50 text-orange-300"
-                  : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-500"
+                  ? "bg-orange-50 border-orange-300 text-orange-700"
+                  : "bg-white border-[#e8e4d9] text-[#4a4a6a] hover:border-[#0d9488]/40"
                 }`}
             >
               🇮🇳 Indian universities only
             </button>
-            <span className="text-slate-500 text-xs">
+            <span className="text-[#8888aa] text-xs">
               {displayResults.length} of {results.length} result{results.length !== 1 ? "s" : ""}
             </span>
           </div>
@@ -238,19 +236,19 @@ export default function Search() {
         {/* ── States ── */}
         {loading && (
           <div className="flex flex-col items-center justify-center py-24 gap-4">
-            <div className="w-10 h-10 border-2 border-cyan-500/30 border-t-cyan-400 rounded-full animate-spin" />
-            <p className="text-slate-400 text-sm">Translating query and searching…</p>
+            <div className="w-10 h-10 border-2 border-[#0d9488]/30 border-t-[#0d9488] rounded-full animate-spin" />
+            <p className="text-[#4a4a6a] text-sm">Translating query and searching…</p>
           </div>
         )}
 
         {error && (
-          <div className="bg-red-900/30 border border-red-700/60 rounded-xl px-5 py-4 text-red-300 text-sm mb-6">
+          <div className="bg-red-50 border border-red-200 rounded-xl px-5 py-4 text-red-700 text-sm mb-6">
             {error}
           </div>
         )}
 
         {!loading && !error && results.length === 0 && query && (
-          <div className="text-center py-24 text-slate-500">
+          <div className="text-center py-24 text-[#8888aa]">
             No results found. Try rephrasing your query.
           </div>
         )}

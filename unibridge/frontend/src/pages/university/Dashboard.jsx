@@ -43,18 +43,18 @@ export default function UniversityDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen bg-[#fdfcf7] text-[#1a1a2e]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
 
       {/* ── Nav ── */}
-      <nav className="border-b border-slate-800 px-8 py-4 flex items-center justify-between">
-        <span className="text-cyan-400 font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
+      <nav className="bg-white border-b border-[#e8e4d9] shadow-sm px-8 py-4 flex items-center justify-between">
+        <span className="text-[#0d9488] font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
           UniBridge
         </span>
-        <div className="flex items-center gap-6 text-sm text-slate-400">
-          <Link to="/university/dashboard"    className="text-white font-medium">Dashboard</Link>
-          <Link to="/university/submit"       className="hover:text-white transition">Submit IP</Link>
-          <Link to="/university/submissions"  className="hover:text-white transition">My Submissions</Link>
-          <button onClick={logout} className="hover:text-red-400 transition">Sign out</button>
+        <div className="flex items-center gap-6 text-sm text-[#4a4a6a]">
+          <Link to="/university/dashboard"   className="text-[#0d9488] font-semibold">Dashboard</Link>
+          <Link to="/university/submit"      className="hover:text-[#0d9488] transition">Submit IP</Link>
+          <Link to="/university/submissions" className="hover:text-[#0d9488] transition">My Submissions</Link>
+          <button onClick={logout} className="text-[#dc2626] hover:bg-red-50 px-2 py-1 rounded-lg transition">Sign out</button>
         </div>
       </nav>
 
@@ -62,19 +62,19 @@ export default function UniversityDashboard() {
 
         {/* ── Header ── */}
         <div className="mb-10">
-          <h1 className="text-4xl text-white mb-2" style={{ fontFamily: "'DM Serif Display', serif" }}>
+          <h1 className="text-4xl text-[#1a1a2e] mb-2" style={{ fontFamily: "'DM Serif Display', serif" }}>
             University Portal
           </h1>
-          <p className="text-slate-400 text-base">Welcome, {user?.email}</p>
+          <p className="text-[#4a4a6a] text-base">Welcome, {user?.email}</p>
         </div>
 
         {/* ── Stat cards ── */}
         <div className="grid grid-cols-3 gap-5 mb-10">
           {statCards.map(({ label, value, sub }) => (
-            <div key={label} className="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6">
-              <p className="text-slate-400 text-xs uppercase tracking-widest mb-2">{label}</p>
-              <p className="text-3xl font-semibold text-white mb-1">{value}</p>
-              <p className="text-slate-500 text-xs">{sub}</p>
+            <div key={label} className="bg-white border border-[#e8e4d9] shadow-sm rounded-2xl p-6">
+              <p className="text-[#8888aa] text-xs uppercase tracking-widest mb-2">{label}</p>
+              <p className="text-3xl font-semibold text-[#1a1a2e] mb-1">{value}</p>
+              <p className="text-[#8888aa] text-xs">{sub}</p>
             </div>
           ))}
         </div>
@@ -83,13 +83,13 @@ export default function UniversityDashboard() {
         <div className="flex gap-4 mb-14">
           <button
             onClick={() => navigate("/university/submit")}
-            className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-6 py-3 rounded-xl transition"
+            className="bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold px-6 py-3 rounded-xl transition"
           >
             📤 Submit New IP
           </button>
           <button
             onClick={() => navigate("/university/submissions")}
-            className="bg-slate-700 hover:bg-slate-600 text-white font-medium px-6 py-3 rounded-xl transition"
+            className="border border-[#0d9488] text-[#0d9488] bg-transparent hover:bg-[#ccfbf1] font-medium px-6 py-3 rounded-xl transition"
           >
             📋 View My Submissions
           </button>
@@ -97,14 +97,14 @@ export default function UniversityDashboard() {
 
         {/* ── Submission Guidelines ── */}
         <div>
-          <h2 className="text-xl text-white mb-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
+          <h2 className="text-xl text-[#1a1a2e] mb-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
             Submission Guidelines
           </h2>
-          <div className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6">
+          <div className="bg-white border border-[#e8e4d9] shadow-sm rounded-2xl p-6">
             <ul className="space-y-3">
               {guidelines.map((g, i) => (
-                <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
-                  <span className="text-cyan-400 font-bold mt-0.5">0{i + 1}</span>
+                <li key={i} className="flex items-start gap-3 text-[#4a4a6a] text-sm leading-relaxed">
+                  <span className="text-[#0d9488] font-bold mt-0.5">0{i + 1}</span>
                   {g}
                 </li>
               ))}

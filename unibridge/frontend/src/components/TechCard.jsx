@@ -2,15 +2,15 @@ import { useState } from "react";
 
 // ─── TRL colour helper ───────────────────────────────────────────────────────
 function trlColor(trl) {
-  if (trl <= 3) return "bg-red-500/20 text-red-300 border-red-500/40";
-  if (trl <= 6) return "bg-yellow-500/20 text-yellow-300 border-yellow-500/40";
-  return "bg-emerald-500/20 text-emerald-300 border-emerald-500/40";
+  if (trl <= 3) return "bg-red-100 text-red-700 border-red-200";
+  if (trl <= 6) return "bg-amber-100 text-amber-700 border-amber-200";
+  return "bg-green-100 text-green-700 border-green-200";
 }
 
 function sourceBadgeColor(source) {
   return source === "patent"
-    ? "bg-violet-500/20 text-violet-300 border-violet-500/40"
-    : "bg-sky-500/20 text-sky-300 border-sky-500/40";
+    ? "bg-violet-100 text-violet-700 border-violet-200"
+    : "bg-sky-100 text-sky-700 border-sky-200";
 }
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -19,17 +19,17 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
   const [showFullExplanation, setShowFullExplanation] = useState(false);
 
   const {
-    title = "",
-    abstract = "",
-    university = "",
-    source = "paper",
-    domain = "",
-    explanation = "",
+    title        = "",
+    abstract     = "",
+    university   = "",
+    source       = "paper",
+    domain       = "",
+    explanation  = "",
     contributors = [],
-    date = "",
+    date         = "",
     trl,
     trl_reasoning = "",
-    is_indian = false,
+    is_indian     = false,
   } = result;
 
   const year = date ? String(date).slice(0, 4) : "—";
@@ -39,7 +39,7 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
       : contributors.join(", ");
 
   return (
-    <div className="flex flex-col bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 gap-3 hover:border-cyan-500/40 transition-all duration-200 shadow-lg hover:shadow-cyan-900/20">
+    <div className="flex flex-col bg-white border border-[#e8e4d9] rounded-2xl p-5 gap-3 hover:border-[#0d9488]/50 hover:shadow-md transition-all duration-200 shadow-sm">
 
       {/* ── Header row ── */}
       <div className="flex items-center justify-between gap-2">
@@ -54,7 +54,7 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
             TRL {trl ?? "?"}
           </span>
           {trl_reasoning && (
-            <div className="absolute right-0 top-6 z-20 hidden group-hover:block w-72 bg-slate-900 border border-slate-600 rounded-xl p-3 text-xs text-slate-300 shadow-2xl leading-relaxed">
+            <div className="absolute right-0 top-6 z-20 hidden group-hover:block w-72 bg-white border border-[#e8e4d9] rounded-xl p-3 text-xs text-[#4a4a6a] shadow-xl leading-relaxed">
               {trl_reasoning}
             </div>
           )}
@@ -63,21 +63,21 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
 
       {/* ── Title ── */}
       <h3
-        className="font-semibold text-white text-sm leading-snug line-clamp-2"
+        className="font-semibold text-[#1a1a2e] text-sm leading-snug line-clamp-2"
         style={{ fontFamily: "'DM Sans', sans-serif" }}
       >
         {title}
       </h3>
 
       {/* ── University ── */}
-      <p className="text-slate-400 text-xs">
+      <p className="text-[#4a4a6a] text-xs">
         {university}
         {is_indian && <span className="ml-1">🇮🇳</span>}
       </p>
 
       {/* ── Domain tag ── */}
       {domain && (
-        <span className="self-start text-[11px] bg-slate-700/60 text-slate-300 border border-slate-600/60 px-2.5 py-0.5 rounded-full">
+        <span className="self-start text-[11px] bg-[#f7f5ed] text-[#4a4a6a] border border-[#e8e4d9] px-2.5 py-0.5 rounded-full">
           {domain}
         </span>
       )}
@@ -85,7 +85,7 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
       {/* ── Explanation ── */}
       {explanation && (
         <div>
-          <p className="text-slate-400 italic text-xs leading-relaxed">
+          <p className="text-[#4a4a6a] italic text-xs leading-relaxed">
             {showFullExplanation || explanation.length <= 120
               ? explanation
               : explanation.slice(0, 120) + "..."}
@@ -93,7 +93,7 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
           {explanation.length > 120 && (
             <span
               onClick={() => setShowFullExplanation((v) => !v)}
-              className="text-cyan-400 text-sm cursor-pointer"
+              className="text-[#0d9488] text-sm cursor-pointer"
               style={{ textDecoration: "none" }}
             >
               {showFullExplanation ? "Show less" : "Show more"}
@@ -104,14 +104,14 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
 
       {/* ── Contributors ── */}
       {displayContributors && (
-        <p className="text-slate-500 text-[11px] truncate">
+        <p className="text-[#8888aa] text-[11px] truncate">
           👤 {displayContributors}
         </p>
       )}
 
       {/* ── Bottom row ── */}
-      <div className="flex items-center justify-between mt-auto pt-2 border-t border-slate-700/50">
-        <span className="text-slate-500 text-xs">{year}</span>
+      <div className="flex items-center justify-between mt-auto pt-2 border-t border-[#e8e4d9]">
+        <span className="text-[#8888aa] text-xs">{year}</span>
         <button
           onClick={() => onBookmark(result)}
           aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
@@ -124,12 +124,12 @@ export default function TechCard({ result, onBookmark, isBookmarked }) {
       {/* ── Expandable abstract ── */}
       <button
         onClick={() => setExpanded((v) => !v)}
-        className="text-cyan-400 hover:text-cyan-300 text-xs text-left transition-colors"
+        className="text-[#0d9488] hover:text-[#0f766e] text-xs text-left transition-colors"
       >
         {expanded ? "Hide abstract ▲" : "Show abstract ▼"}
       </button>
       {expanded && (
-        <p className="text-slate-400 text-xs leading-relaxed border-t border-slate-700/40 pt-3">
+        <p className="text-[#4a4a6a] text-xs leading-relaxed border-t border-[#e8e4d9] pt-3">
           {abstract || "No abstract available."}
         </p>
       )}

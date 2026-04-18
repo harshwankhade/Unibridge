@@ -9,21 +9,21 @@ function getBookmarks() {
 }
 
 export default function Dashboard() {
-  const navigate = useNavigate();
-  const user = getUser();
+  const navigate  = useNavigate();
+  const user      = getUser();
   const bookmarks = getBookmarks();
 
   return (
     <div
-      className="min-h-screen bg-slate-900 text-white"
+      className="min-h-screen bg-[#fdfcf7] text-[#1a1a2e]"
       style={{ fontFamily: "'DM Sans', sans-serif" }}
     >
       {/* ── Nav bar ── */}
-      <nav className="border-b border-slate-800 px-8 py-4 flex items-center justify-between">
-        <span className="text-cyan-400 font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
+      <nav className="bg-white border-b border-[#e8e4d9] shadow-sm px-8 py-4 flex items-center justify-between">
+        <span className="text-[#0d9488] font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
           UniBridge
         </span>
-        <span className="text-slate-400 text-sm">{user?.email}</span>
+        <span className="text-[#8888aa] text-sm">{user?.email}</span>
       </nav>
 
       <main className="max-w-5xl mx-auto px-6 py-12">
@@ -31,20 +31,20 @@ export default function Dashboard() {
         {/* ── Welcome header ── */}
         <div className="mb-10">
           <h1
-            className="text-4xl text-white mb-2"
+            className="text-4xl text-[#1a1a2e] mb-2"
             style={{ fontFamily: "'DM Serif Display', serif" }}
           >
             Welcome back
           </h1>
-          <p className="text-slate-400 text-base">{user?.email}</p>
+          <p className="text-[#4a4a6a] text-base">{user?.email}</p>
         </div>
 
         {/* ── Stat card ── */}
         <div className="mb-10">
-          <div className="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6 inline-block min-w-[180px]">
-            <p className="text-slate-400 text-xs uppercase tracking-widest mb-2">Bookmarks</p>
-            <p className="text-3xl font-semibold text-white mb-1">{bookmarks.length}</p>
-            <p className="text-slate-500 text-xs">saved results</p>
+          <div className="bg-white border border-[#e8e4d9] shadow-sm rounded-2xl p-6 inline-block min-w-[180px]">
+            <p className="text-[#8888aa] text-xs uppercase tracking-widest mb-2">Bookmarks</p>
+            <p className="text-3xl font-semibold text-[#1a1a2e] mb-1">{bookmarks.length}</p>
+            <p className="text-[#8888aa] text-xs">saved results</p>
           </div>
         </div>
 
@@ -52,13 +52,13 @@ export default function Dashboard() {
         <div className="flex gap-4 mb-14">
           <button
             onClick={() => navigate("/industry/search")}
-            className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-6 py-3 rounded-xl transition"
+            className="bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold px-6 py-3 rounded-xl transition"
           >
             🔍 Start Searching
           </button>
           <button
             onClick={() => navigate("/industry/bookmarks")}
-            className="bg-slate-700 hover:bg-slate-600 text-white font-medium px-6 py-3 rounded-xl transition"
+            className="border border-[#0d9488] text-[#0d9488] bg-transparent hover:bg-[#ccfbf1] font-medium px-6 py-3 rounded-xl transition"
           >
             🔖 View Bookmarks
           </button>
@@ -67,21 +67,21 @@ export default function Dashboard() {
         {/* ── How it works ── */}
         <div>
           <h2
-            className="text-xl text-white mb-6"
+            className="text-xl text-[#1a1a2e] mb-6"
             style={{ fontFamily: "'DM Serif Display', serif" }}
           >
             How it works
           </h2>
           <div className="grid grid-cols-3 gap-5">
             {[
-              { step: "01", title: "Choose your search mode",        desc: "Select Solve, Benchmark, or Landscape to frame your need." },
-              { step: "02", title: "Describe your need",              desc: "Write in plain business language — no jargon required."     },
-              { step: "03", title: "Explore matched research",        desc: "Browse university patents and papers ranked by relevance."  },
+              { step: "01", title: "Choose your search mode",  desc: "Select Solve, Benchmark, or Landscape to frame your need." },
+              { step: "02", title: "Describe your need",        desc: "Write in plain business language — no jargon required."    },
+              { step: "03", title: "Explore matched research",  desc: "Browse university patents and papers ranked by relevance." },
             ].map(({ step, title, desc }) => (
-              <div key={step} className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6">
-                <span className="text-cyan-400 text-xs font-bold tracking-widest">{step}</span>
-                <h3 className="text-white font-semibold mt-2 mb-2 text-sm">{title}</h3>
-                <p className="text-slate-400 text-xs leading-relaxed">{desc}</p>
+              <div key={step} className="bg-white border border-[#e8e4d9] shadow-sm rounded-2xl p-6">
+                <span className="text-[#0d9488] text-xs font-bold tracking-widest">{step}</span>
+                <h3 className="text-[#1a1a2e] font-semibold mt-2 mb-2 text-sm">{title}</h3>
+                <p className="text-[#4a4a6a] text-xs leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
