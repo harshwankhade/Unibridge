@@ -4,25 +4,25 @@ import client from "../../api/client";
 import { getToken, logout } from "../../utils/auth";
 import TechCard from "../../components/TechCard";
 
-const BOOKMARKS_KEY  = "unibridge_bookmarks";
+const BOOKMARKS_KEY = "unibridge_bookmarks";
 
 const CATEGORIES = [
   {
-    id:    "solve",
+    id: "solve",
     label: "Solve a Problem",
-    desc:  "Find research that addresses your technical challenge",
+    desc: "Find research that addresses your technical challenge",
     placeholder: "e.g. We're struggling with heat dissipation in power electronics",
   },
   {
-    id:    "benchmark",
+    id: "benchmark",
     label: "Benchmark Technologies",
-    desc:  "Compare approaches and technologies in your domain",
+    desc: "Compare approaches and technologies in your domain",
     placeholder: "e.g. Compare solid-state vs lithium-ion battery technologies",
   },
   {
-    id:    "landscape",
+    id: "landscape",
     label: "Landscape a Field",
-    desc:  "Explore the full research landscape of a field",
+    desc: "Explore the full research landscape of a field",
     placeholder: "e.g. Overview of CRISPR gene editing research",
   },
 ];
@@ -37,15 +37,15 @@ function saveBookmarks(bm) {
 }
 
 export default function Search() {
-  const [query,           setQuery]           = useState("");
-  const [category,        setCategory]        = useState("solve");
-  const [results,         setResults]         = useState([]);
-  const [loading,         setLoading]         = useState(false);
-  const [error,           setError]           = useState("");
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("solve");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [translatedQuery, setTranslatedQuery] = useState("");
-  const [bookmarks,       setBookmarks]       = useState(loadBookmarks);
-  const [indianOnly,      setIndianOnly]      = useState(false);
-  const [showTranslated,  setShowTranslated]  = useState(false);
+  const [bookmarks, setBookmarks] = useState(loadBookmarks);
+  const [indianOnly, setIndianOnly] = useState(false);
+  const [showTranslated, setShowTranslated] = useState(false);
 
   const activeCat = CATEGORIES.find((c) => c.id === category);
 
@@ -53,7 +53,7 @@ export default function Search() {
   const handleBookmark = (result) => {
     setBookmarks((prev) => {
       const exists = prev.some((b) => b.id === result.id);
-      const next   = exists ? prev.filter((b) => b.id !== result.id) : [...prev, result];
+      const next = exists ? prev.filter((b) => b.id !== result.id) : [...prev, result];
       saveBookmarks(next);
       return next;
     });
@@ -106,7 +106,7 @@ export default function Search() {
         </span>
         <div className="flex gap-6 text-sm text-[#4a4a6a]">
           <Link to="/industry/dashboard" className="hover:text-[#0d9488] transition">Dashboard</Link>
-          <Link to="/industry/search"    className="text-[#0d9488] font-semibold">Search</Link>
+          <Link to="/industry/search" className="text-[#0d9488] font-semibold">Search</Link>
           <Link to="/industry/bookmarks" className="hover:text-[#0d9488] transition">Bookmarks</Link>
         </div>
       </nav>
@@ -123,7 +123,7 @@ export default function Search() {
               Technology Search
             </h1>
             <p className="text-[#4a4a6a]">
-              Discover university IP and research across 1,000+ institutions
+              Discover university IP and research across 100+ global institutions
             </p>
           </div>
           <button

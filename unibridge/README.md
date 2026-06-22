@@ -162,4 +162,4 @@ docker compose down -v
 
 - **Patents** — Lens.org API
 - **Research Papers** — Semantic Scholar API
-- **Universities** — QS World University Rankings (top 1000)
+- **Universities** — QS World University Rankings (top 100)

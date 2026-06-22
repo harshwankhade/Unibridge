@@ -70,9 +70,18 @@ def ingest_records(filepath: str) -> None:
     """
     fpath = Path(filepath)
     if not fpath.is_absolute():
-        # Resolve relative paths against this file's location so the script
-        # works regardless of where it is invoked from.
-        fpath = (_HERE / filepath).resolve()
+        candidates = [
+            (_HERE / filepath).resolve(),
+            (_HERE.parents[1] / filepath).resolve(),
+            (_HERE.parents[2] / filepath).resolve(),
+            Path.cwd() / filepath,
+        ]
+        for candidate in candidates:
+            if candidate.exists():
+                fpath = candidate
+                break
+        else:
+            fpath = candidates[0]
 
     print(f"Loading records from {fpath}")
     with open(fpath, encoding="utf-8") as f:
